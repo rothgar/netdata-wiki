@@ -30,6 +30,10 @@ Other than the above, the plugin configuration is up to the plugin.
 
 Keep in mind, that the user may use netdata configuration to overwrite chart and dimension parameters. This is transparent to the plugin.
 
+### Autoconfiguration
+
+Plugins should attempt to autoconfigure themselves when possible. For example, if your plugin wants to monitor `squid`, you can search for it on port `3128` or `8080`. If any succeeds, you can proceed. If it fails you can output an error (on stderr) saying that you cannot find `squid` running and giving instructions about the plugin configuration. Then you can stop (exit with non-zero value), so that netdata will not attempt to start the plugin again.
+
 ### Disabled plugins
 
 Plugins that exit with any value other than zero, will be disabled. Plugins that exit with zero, will be restarted after some time.
