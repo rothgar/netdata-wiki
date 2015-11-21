@@ -30,7 +30,7 @@ Plugins may also be disabled by netdata if they are writing things that netdata 
 
 Plugins have to be designed in such a way to stay alive for multiple iterations.
 
-This is very important for the resources consumed by netdata as a total. CPU resources are scarce, while memory resources are not to the same degree. Of course there must be a balance, but CPU resources must be respected above all other. So, writing plugins that can stay alive and repeatedly collect data and output them for netdata, is the best way of doing it.
+> This is very important for the resources consumed by netdata as a total. CPU resources are scarce, while memory resources are not to the same degree. Of course there must be a balance, but CPU resources must be respected above all other. So, writing plugins that can stay alive and repeatedly collect data and output them for netdata, is the best way of doing it.
 
 ### Generating data for netdata
 
