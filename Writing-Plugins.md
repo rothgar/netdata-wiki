@@ -14,9 +14,9 @@ Many of these languages can run their code efficiently, but they require a lot o
 
 ### Communication with netdata
 
-Plugins standard output (stdout) is connected through a pipe to netdata. This is how netdata reads values from them.
+Plugins' standard output (stdout) is connected through a pipe to netdata. This is how netdata reads values from them.
 
-Plugins standard error (stderr) is send to the error log of netdata.
+Plugins' standard error (stderr) is sent to the error log of netdata.
 
 ### Plugins run forever
 
