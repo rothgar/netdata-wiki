@@ -18,6 +18,12 @@ Plugins standard output (stdout) is connected through a pipe to netdata. This is
 
 Plugins standard error (stderr) is send to the error log of netdata.
 
+### Plugins run forever
+
+Plugins have to be designed in such a way to stay alive for multiple iterations.
+
+> This is very important for the resources consumed by netdata as a total. CPU resources are scarce, while memory resources are not to the same degree. Of course there must be a balance, but CPU resources must be respected above all other. So, writing plugins that can stay alive and repeatedly collect and send data to netdata, is the best way of doing it.
+
 ### Plugins configuration
 
 Netdata will only supply the environment variable `NETDATA_CONFIG_DIR` to the directory where configuration files are stored. It is up to the plugin to read the configuration it needs.
@@ -32,7 +38,9 @@ Keep in mind, that the user may use netdata configuration to overwrite chart and
 
 ### Autoconfiguration
 
-Plugins should attempt to autoconfigure themselves when possible. For example, if your plugin wants to monitor `squid`, you can search for it on port `3128` or `8080`. If any succeeds, you can proceed. If it fails you can output an error (on stderr) saying that you cannot find `squid` running and giving instructions about the plugin configuration. Then you can stop (exit with non-zero value), so that netdata will not attempt to start the plugin again.
+Plugins should attempt to autoconfigure themselves when possible.
+
+For example, if your plugin wants to monitor `squid`, you can search for it on port `3128` or `8080`. If any succeeds, you can proceed. If it fails you can output an error (on stderr) saying that you cannot find `squid` running and giving instructions about the plugin configuration. Then you can stop (exit with non-zero value), so that netdata will not attempt to start the plugin again.
 
 ### Disabled plugins
 
@@ -41,12 +49,6 @@ Plugins that exit with any value other than zero, will be disabled. Plugins that
 Plugins may also be disabled by writing the keyword `DISABLE` on their output. This keyword must be alone in its line.
 
 Plugins may also be disabled by netdata if they are writing things that netdata does not understand.
-
-### Plugins run forever
-
-Plugins have to be designed in such a way to stay alive for multiple iterations.
-
-> This is very important for the resources consumed by netdata as a total. CPU resources are scarce, while memory resources are not to the same degree. Of course there must be a balance, but CPU resources must be respected above all other. So, writing plugins that can stay alive and repeatedly collect and send data to netdata, is the best way of doing it.
 
 ### Generating data for netdata
 
