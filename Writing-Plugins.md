@@ -1,4 +1,4 @@
-netdata supports plugins written in **any language**. The only requirement netdata has from their plugins is to be able to print values at their output.
+netdata supports plugins written in **any language**. The only requirement netdata has from its plugins, is to be able to print data at their output.
 
 Plugins can be written in the appropriate language for their job. For example:
 
