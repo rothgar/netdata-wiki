@@ -1,4 +1,4 @@
-netdata supports plugin written in any language. The only requirement netdata has from their plugins is to be able to print values at their output.
+netdata supports plugins written in **any language**. The only requirement netdata has from their plugins is to be able to print values at their output.
 
 Plugins can be written in the appropriate language for their job. For example:
 
@@ -7,7 +7,7 @@ Plugins can be written in the appropriate language for their job. For example:
 - You can collect data from a system command, using a shell script
 - etc.
 
-Many of these languages can their code efficiently, but they require a lot of resources to be initialized. netdata suggests that plugins will be initialized once and run forever (until stopped by netdata). This way, the expensive part of their execution, their initialization, is eliminated.
+Many of these languages can run their code efficiently, but they require a lot of resources when they are initialized. netdata suggests that plugins will be **initialized once and run forever** (until stopped by netdata). This way, the expensive part of their execution, their initialization, is eliminated.
 
 # Writing plugins
 
