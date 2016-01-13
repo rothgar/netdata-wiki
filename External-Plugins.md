@@ -22,7 +22,7 @@ charts can also be added any time (not just the beginning).
 The plugin should accept just **one** parameter: **the number of seconds it is
 expected to update the values for its charts**. The value passed by netdata
 to the plugin is controlled via its configuration file (so there is not need
-for the plugin to handle this configuration option).
+for the plugin to handle this configuration option). Check **[External Plugins Configuration](https://github.com/firehol/netdata/wiki/Configuration#external-plugins)**
 
 The script can overwrite the update frequency. For example, the server may
 request per second updates, but the script may overwrite this to one update
