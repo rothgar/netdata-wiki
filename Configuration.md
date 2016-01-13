@@ -65,9 +65,11 @@ Most internal plugins will provide additional options. Check **[[Internal Plugin
 
 ### External Plugins
 
-External plugins will have only 2 options:
+External plugins will have only 2 options at `netdata.conf`:
 
 setting | default | info
 :------:|:-------:|:----
 update every|the value of `[global].update every` setting|The frequency in seconds the plugin should collect values. For more information check **[[Performance]]**.
 command options|*empty*|Additional command line options to pass to the plugin. 
+
+External plugins that need additional configuration may support a dedicated file in `/etc/netdata`. Check their documentation.
