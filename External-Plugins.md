@@ -4,7 +4,7 @@ netdata plugins
 Any program that can print a few values to its standard output can become
 a netdata plugin.
 
-There are 5 lines netdata parses. lines starting with:
+There are 7 lines netdata parses. lines starting with:
 
 - `CHART` - create a new chart
 - `DIMENSION` - add a dimension to the chart just created
