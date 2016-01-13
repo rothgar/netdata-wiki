@@ -11,6 +11,8 @@ There are 5 lines netdata parses. lines starting with:
 - `BEGIN` - initialize data collection for a chart
 - `SET` - set the value of a dimension for the initialized chart
 - `END` - complete data collection for the initialized chart
+- `FLUSH` - ignore the last collected values
+- `DISABLE` - disable this plugin
 
 a single program can produce any number of charts with any number of dimensions
 each.
@@ -48,6 +50,10 @@ variable|description
 # the output of the plugin
 
 The plugin should output instructions for netdata to its output (`stdout`).
+
+## DISABLE
+
+`DISABLE` will disable this plugin. This will prevent netdata from restarting the plugin. You can also exit with the value `1` to have the same effect.
 
 ## CHART
 
@@ -219,7 +225,6 @@ all the values collected since the last `BEGIN` command.
 If a plugin does not behave properly (outputs invalid lines, or does not
 follow these guidelines), will be disabled by netdata.
 
-
 ### collected values
 
 netdata will collect any **signed** value in the 64bit range:
@@ -287,3 +292,5 @@ There are a few rules for writing plugins properly:
     Netdata interpolates values to second boundaries, so even if your plugin is not perfectly aligned it does not matter. Netdata will find out. When your plugin is works in increments of `update_every`, there will be no gaps in the charts due to the possible cumulative micro-delays in data collection. Gaps will only appear if the data collection is really delayed.
 
 3. If you are not sure of memory leaks, exit every one hour. Netdata will re-start your process.
+
+4. If it possible, try to autodetect if your plugin should be enabled, without any configuration.
