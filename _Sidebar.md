@@ -4,7 +4,7 @@
 * [[Configuration]]
 * [[Performance]]
 * [[Memory Requirements]]
-    - [[Memory Deduplication (KSM)]]
+    - [[Memory Deduplication - KSM]]
 ---
 
 **Data Collection**
