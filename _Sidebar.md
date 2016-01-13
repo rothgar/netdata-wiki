@@ -30,4 +30,10 @@
 **Web Dashboards**
 * [[Overview]]
 * [[Chart Libraries]]
+    - [[Dygraph]]
+    - [[EasyPieChart]]
+    - [[Gauge.js]]
+    - [[jQuery Sparkline]]
+    - [[Peity]]
+
 * [[Writing Dashboards]]
