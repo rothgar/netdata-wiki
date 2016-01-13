@@ -17,7 +17,7 @@ The configuration file has sections stated with `[section]`. There will be the f
 
 The configuration file is a `name = value` dictionary. Netdata will not complain if you set options unknown to it. When you check the running configuration by accessing the URL `/netdata.conf` on your netdata server, netdata will add a comment on settings it does not currently use.
 
-### Global options
+### [global] section options
 
 setting | default | info
 :------:|:-------:|:----
@@ -44,5 +44,25 @@ ip version|any|Can be `any` to attempt opening both IPv4 and IPv6 ports, `ipv4` 
 disconnect idle web clients after seconds|60|The time in seconds to disconnect web clients after being totally idle.
 enable web responses gzip compression|yes|When set to `yes`, netdata web responses will be GZIP compressed, if the web client accepts such responses.
 
+### [plugins] section options
+
+In this section there will be a boolean (`yes`/`no`) option for each plugin. Additionally, there will be the following options:
+
+setting | default | info
+:------:|:-------:|:----
+checks|no|This is a debugging plugin for the internal latency of netdata.
+enable running new plugins|yes|When set to `yes`, netdata will enable plugins not configured specifically for them. Setting this to `no` will disable all plugins you have not set to `yes` explicitly.
+check for new plugins every|60|The time in seconds to check for new plugins in the plugins directory. This allows having other applications dynamically creating plugins for netdata.
 
 ## Netdata Plugins
+
+The configuration options for plugins appear in sections following the pattern `[plugin:NAME]`.
+
+Most internal plugins will provide additional options.
+
+External plugins will have only 2 options:
+
+setting | default | info
+:------:|:-------:|:----
+update every|the same value of the global `update every` setting|The frequency in seconds the plugin should collect values. For more information check **[[Performance]]**.
+command options|*empty*|Additional command line options to pass to the plugin. 
