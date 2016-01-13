@@ -286,3 +286,4 @@ There are a few rules for writing plugins properly:
 
     Netdata interpolates values to second boundaries, so even if your plugin is not perfectly aligned it does not matter. Netdata will find out. When your plugin is works in increments of `update_every`, there will be no gaps in the charts due to the possible cumulative micro-delays in data collection. Gaps will only appear if the data collection is really delayed.
 
+3. If you are not sure of memory leaks, exit every one hour. Netdata will re-start your process.
