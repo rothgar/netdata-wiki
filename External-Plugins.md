@@ -233,3 +233,56 @@ If a value is not collected, leave it empty, like this:
 `SET id = `
 
 or do not output the line at all.
+
+# Writing Plugins Properly
+
+There are a few rules for writing plugins properly:
+
+1. Respect system resources
+
+   Pay special attention to efficiency:
+
+      - Initialize everything once, at the beginning. Initialization is not an expensive operation. Your plugin will most probably be started once and run forever. So, do whatever heavy operation is needed at the beginning, just once.
+      - Do the absolutely minimum while iterating to collect values repeatedly.
+      - If you need to connect to another server to collect values, avoid re-connects if possible. Connect just once, with keep-alive enabled and collect values using the same connection.
+      - Avoid any CPU or memory heavy operation while collecting data.
+      - Avoid running external commands when possible.
+
+2. The best way to iterate at a constant pace is this pseudo code:
+
+   ```
+   update_every = FIRST COMMAND LINE PARAMETER
+   now = CURRENT TIMESTAMP
+
+   count = 0
+   last_run = 0
+   next_run = now
+
+   FOREVER
+   DO
+       now = CURRENT TIMESTAMP
+   
+       if next_run <= now
+       then
+           count++
+
+           WHILE next_run <= now
+           DO
+              next_run += update_every
+           DONE
+
+           dt_since_last_run = now - last_run
+           last_run = now
+
+           COLLECT VALUES
+           PRINT VALUES (output dt_since_last_run only if count > 1)
+       end if
+
+       SLEEP 1/10th of update_every
+   DONE
+   ```
+
+    Using the above procedure, your plugin will be synchronized to start data collection on steps of `update_every`. There will be no need to keep track of latencies in data collection.
+
+    Netdata interpolates values to second boundaries, so even if your plugin is not perfectly aligned it does not matter. Netdata will find out. When your plugin is works in increments of `update_every`, there will be no gaps in the charts due to the possible cumulative micro-delays in data collection. Gaps will only appear if the data collection is really delayed.
+
