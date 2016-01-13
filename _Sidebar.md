@@ -4,6 +4,7 @@
 * [[Command Line Options]]
 * [[Configuration]]
 * [[Log Files]]
+* [[Tracing Options]]
 * [[Performance]]
 * [[Memory Requirements]]
     - [[Memory Deduplication - Kernel Same Page Merging - KSM]]
