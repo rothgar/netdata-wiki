@@ -293,8 +293,8 @@ There are a few rules for writing plugins properly:
 
     Using the above procedure, your plugin will be synchronized to start data collection on steps of `update_every`. There will be no need to keep track of latencies in data collection.
 
-    Netdata interpolates values to second boundaries, so even if your plugin is not perfectly aligned it does not matter. Netdata will find out. When your plugin is works in increments of `update_every`, there will be no gaps in the charts due to the possible cumulative micro-delays in data collection. Gaps will only appear if the data collection is really delayed.
+    Netdata interpolates values to second boundaries, so even if your plugin is not perfectly aligned it does not matter. Netdata will find out. When your plugin works in increments of `update_every`, there will be no gaps in the charts due to the possible cumulative micro-delays in data collection. Gaps will only appear if the data collection is really delayed.
 
 3. If you are not sure of memory leaks, exit every one hour. Netdata will re-start your process.
 
-4. If it possible, try to autodetect if your plugin should be enabled, without any configuration.
+4. If possible, try to autodetect if your plugin should be enabled, without any configuration.
