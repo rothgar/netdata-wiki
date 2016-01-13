@@ -4,7 +4,7 @@
 * [[Configuration]]
 * [[Performance]]
 * [[Memory Requirements]]
-    - [[Memory Deduplication - Kernel Same Page - KSM]]
+    - [[Memory Deduplication - Kernel Same Page Merging - KSM]]
 
 ---
 
