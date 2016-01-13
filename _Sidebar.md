@@ -44,5 +44,4 @@
     - [[Gauge.js]]
     - [[jQuery Sparkline]]
     - [[Peity]]
-
 * [[Custom Dashboards]]
