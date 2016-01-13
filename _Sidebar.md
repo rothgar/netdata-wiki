@@ -9,7 +9,7 @@
 * [[Internal Plugins]]
 * [[External Plugins]]
 * [[Apps Plugin]]
-* [[Charts.d]] BASH Plugins
+* [[Charts.d BASH Plugins]]
 
 **BASH Plugins**
 * [[ap.chart.sh]]
