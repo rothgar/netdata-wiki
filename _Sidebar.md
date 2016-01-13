@@ -3,6 +3,8 @@
 * [[Installation]]
 * [[Configuration]]
 
+---
+
 **Data Collection**
 * [[Internal Plugins]]
 * [[External Plugins]]
