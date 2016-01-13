@@ -37,7 +37,7 @@ access log|`/var/log/netdata/access.log`|The filename to save the log of web cli
 memory mode|save|When set to `save` netdata will save its round robin database on exit and load it on startup. When set to `map` the cache files will be updated in real time (check `man mmap` - do not set this on systems with heavy load or slow disks - the disks will continuously sync the in-memory database of netdata). When set to `ram` the round robin database will be temporary and it will be lost when netdata exits.
 update every|1|The frequency in seconds, for data collection. For more information see **[[Performance]]**.
 run as user|`netdata`|The user netdata will run as.
-web files owner|`netdata`|The user that owns the web static files. Netdata will refuse to serve a file that is not owned by this user. If the user given is not found, netdata will only serve files owned by user given in `run as user`.
+web files owner|`netdata`|The user that owns the web static files. Netdata will refuse to serve a file that is not owned by this user, even if it has read access to that file. If the user given is not found, netdata will only serve files owned by user given in `run as user`.
 http port listen backlog|100|The port backlog. Check `man 2 listen`.
 port|19999|The port to listen for web clients.
 ip version|any|Can be `any` to attempt opening both IPv4 and IPv6 ports, `ipv4` to attempt only IPv4, `ipv6` to attempt only IPv6. If the port cannot be opened, netdata will refuse to run.
