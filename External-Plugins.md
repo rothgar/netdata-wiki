@@ -257,11 +257,19 @@ There are a few rules for writing plugins properly:
 
    ```js
    update_every = argv[1] * 1000 // seconds * 1000 = milliseconds
-   now = currentTimeStampInMilliseconds()
+
+   readConfiguration()
+   
+   if(!verifyWeCanCollectValues()) {
+      print "DISABLE"
+      exit(1)
+   }
+
+   createCharts()
 
    count = 0
    last_run = 0
-   next_run = now
+   next_run = currentTimeStampInMilliseconds()
 
    FOREVER {
        now = currentTimeStampInMilliseconds()
