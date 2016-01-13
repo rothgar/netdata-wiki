@@ -28,12 +28,12 @@ cache directory|`/var/cache/netdata`|The directory the memory database will be s
 log directory|`/var/log/netdata`|The directory the log files are kept. Check **[[Log Files]]** for more information.
 host access prefix|*empty*|This is used in docker environments where /proc, /sys, etc have to be accessed via another path. You may also have to set SYS_PTRACE capability on the docker for this work. Check https://github.com/firehol/netdata/issues/43.
 debug flags|0x00000000|Bit mask of debug options to enable.
+memory deduplication (ksm)|yes|When set to `yes`, netdata will offer its in-memory round robin database to kernel same page merging (KSM) for deduplication. For more information check **[[Memory Deduplication - Kernel Same Page Merging - KSM]]**
+debug log|`/var/log/netdata/debug.log`|The filename to save debug information. This file will not be created is debugging is not enabled. You can also set it to `syslog` to send the debug messages to syslog, or `none` to disable this log. For more information check **[[Tracing Options]]**.
+error log|`/var/log/netdata/error.log`|The filename to save error messages for netdata daemon and all plugins (`stderr` is sent here for all netdata programs, including the plugins). You can also set it to `syslog` to send the errors to syslog, or `none` to disable this log.
+access log|`/var/log/netdata/access.log`|The filename to save the log of web clients accessing netdata charts. You can also set it to `syslog` to send the access log to syslog, or `none` to disable this log.
+memory mode|save|When set to `save` netdata will save its round robin database on exit and load it on startup. When set to `map` the cache files will be updated in real time (check `man mmap`). When set to `ram` the round robin database will be temporary and it will be lost when netdata exits.
 
-	# memory deduplication (ksm) = yes
-	# debug log = /opt/netdata/var/log/netdata/debug.log
-	# error log = /opt/netdata/var/log/netdata/error.log
-	# access log = /opt/netdata/var/log/netdata/access.log
-	# memory mode = save
 	# update every = 1
 	# run as user = netdata
 	# web files owner = netdata
