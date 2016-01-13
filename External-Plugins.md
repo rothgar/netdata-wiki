@@ -255,36 +255,32 @@ There are a few rules for writing plugins properly:
 
 2. The best way to iterate at a constant pace is this pseudo code:
 
-   ```
-   update_every = FIRST COMMAND LINE PARAMETER
-   now = CURRENT TIMESTAMP
+   ```js
+   update_every = argv[1] * 1000 // seconds * 1000 = milliseconds
+   now = currentTimeStampInMilliseconds()
 
    count = 0
    last_run = 0
    next_run = now
 
-   FOREVER
-   DO
-       now = CURRENT TIMESTAMP
+   FOREVER {
+       now = currentTimeStampInMilliseconds()
    
-       if next_run <= now
-       then
+       if ( next_run <= now ) {
            count++
 
-           WHILE next_run <= now
-           DO
+           while ( next_run <= now )
               next_run += update_every
-           DONE
 
-           dt_since_last_run = now - last_run
+           dt_since_last_run = (now - last_run) * 1000 // in microseconds
            last_run = now
 
-           COLLECT VALUES
-           PRINT VALUES (output dt_since_last_run only if count > 1)
-       end if
+           collectValues()
+           printValues() // output dt_since_last_run in BEGIN, only if count > 1
+       }
 
-       SLEEP 1/10th of update_every
-   DONE
+       sleepMilliseconds(update_every / 10)
+   }
    ```
 
     Using the above procedure, your plugin will be synchronized to start data collection on steps of `update_every`. There will be no need to keep track of latencies in data collection.
