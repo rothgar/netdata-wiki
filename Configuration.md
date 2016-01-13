@@ -32,16 +32,15 @@ memory deduplication (ksm)|yes|When set to `yes`, netdata will offer its in-memo
 debug log|`/var/log/netdata/debug.log`|The filename to save debug information. This file will not be created is debugging is not enabled. You can also set it to `syslog` to send the debug messages to syslog, or `none` to disable this log. For more information check **[[Tracing Options]]**.
 error log|`/var/log/netdata/error.log`|The filename to save error messages for netdata daemon and all plugins (`stderr` is sent here for all netdata programs, including the plugins). You can also set it to `syslog` to send the errors to syslog, or `none` to disable this log.
 access log|`/var/log/netdata/access.log`|The filename to save the log of web clients accessing netdata charts. You can also set it to `syslog` to send the access log to syslog, or `none` to disable this log.
-memory mode|save|When set to `save` netdata will save its round robin database on exit and load it on startup. When set to `map` the cache files will be updated in real time (check `man mmap`). When set to `ram` the round robin database will be temporary and it will be lost when netdata exits.
-
-	# update every = 1
-	# run as user = netdata
-	# web files owner = netdata
-	# http port listen backlog = 100
-	# port = 19999
-	# ip version = any
-	# disconnect idle web clients after seconds = 60
-	# enable web responses gzip compression = yes
+memory mode|save|When set to `save` netdata will save its round robin database on exit and load it on startup. When set to `map` the cache files will be updated in real time (check `man mmap` - do not set this on systems with heavy load or slow disks - the disks will continuously sync the in-memory database of netdata). When set to `ram` the round robin database will be temporary and it will be lost when netdata exits.
+update every|1|The frequency in seconds, for data collection. For more information see **[[Performance]]**.
+run as user|`netdata`|The user netdata will run as.
+web files owner|`netdata`|The user that owns the web static files.
+http port listen backlog|100|The port backlog. Check `man 2 listen`.
+port|19999|The port to listen for web clients.
+ip version|any|Can be `any` to attempt opening both IPv4 and IPv6 ports, `ipv4` to attempt only IPv4, `ipv6` to attempt only IPv6. If the port cannot be opened, netdata will refuse to run.
+disconnect idle web clients after seconds|60|The time in seconds to disconnect web clients after being totally idle.
+enable web responses gzip compression|yes|When set to `yes`, netdata web responses will be GZIP compressed, if the web client accepts such responses.
 
 
 ## Netdata Plugins
