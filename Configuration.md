@@ -58,7 +58,12 @@ check for new plugins every|60|The time in seconds to check for new plugins in t
 
 The configuration options for plugins appear in sections following the pattern `[plugin:NAME]`.
 
-Most internal plugins will provide additional options.
+### Internal Plugins
+
+Most internal plugins will provide additional options. Check their documentation for more information.
+
+
+### External Plugins
 
 External plugins will have only 2 options:
 
