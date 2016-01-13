@@ -60,7 +60,7 @@ The configuration options for plugins appear in sections following the pattern `
 
 ### Internal Plugins
 
-Most internal plugins will provide additional options. Check their documentation for more information.
+Most internal plugins will provide additional options. Check **[[Internal Plugins]]** for more information.
 
 
 ### External Plugins
