@@ -2,7 +2,9 @@
 * [[Why netdata?]]
 * [[Installation]]
 * [[Configuration]]
-
+* [[Performance]]
+* [[Memory Requirements]]
+    - [[Memory Deduplication (KSM)]]
 ---
 
 **Data Collection**
