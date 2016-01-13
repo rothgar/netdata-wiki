@@ -64,5 +64,5 @@ External plugins will have only 2 options:
 
 setting | default | info
 :------:|:-------:|:----
-update every|the same value of the global `update every` setting|The frequency in seconds the plugin should collect values. For more information check **[[Performance]]**.
+update every|the value of `[global].update every` setting|The frequency in seconds the plugin should collect values. For more information check **[[Performance]]**.
 command options|*empty*|Additional command line options to pass to the plugin. 
