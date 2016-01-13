@@ -36,4 +36,4 @@
     - [[jQuery Sparkline]]
     - [[Peity]]
 
-* [[Writing Dashboards]]
+* [[Custom Dashboards]]
