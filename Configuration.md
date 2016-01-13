@@ -26,8 +26,9 @@ plugins directory|`/usr/libexec/netdata/plugins.d`|The directory plugin programs
 web files directory|`/usr/share/netdata/web`|The directory the web static files are kept.
 cache directory|`/var/cache/netdata`|The directory the memory database will be stored if and when netdata exits. Netdata will re-read the database when it will start again, to continue from the same point.
 log directory|`/var/log/netdata`|The directory the log files are kept. Check **[[Log Files]]** for more information.
-host access prefix|<empty>|This is used in docker environments where /proc, /sys, etc have to be accessed via another path. You may also have to set SYS_PTRACE capability on the docker for this work. Check https://github.com/firehol/netdata/issues/43.
-	# debug flags = 0x00000000
+host access prefix|*empty*|This is used in docker environments where /proc, /sys, etc have to be accessed via another path. You may also have to set SYS_PTRACE capability on the docker for this work. Check https://github.com/firehol/netdata/issues/43.
+debug flags|0x00000000|Bit mask of debug options to enable.
+
 	# memory deduplication (ksm) = yes
 	# debug log = /opt/netdata/var/log/netdata/debug.log
 	# error log = /opt/netdata/var/log/netdata/error.log
