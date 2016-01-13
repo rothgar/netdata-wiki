@@ -9,7 +9,7 @@
 * [[Internal Plugins]]
 * [[External Plugins]]
 * [[Apps Plugin]]
-* [[BASH Plugins]]
+* [[Charts.d]] BASH Plugins
 
 **BASH Plugins**
 * [[ap.chart.sh]]
@@ -23,7 +23,7 @@
 * [[squid.chart.sh]]
 
 **Other Plugins**
-* [[SMA Webbox Plugin]]
+* [[SMA Webbox Plugin]] in Node.js
 
 ---
 
