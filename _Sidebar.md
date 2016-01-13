@@ -25,8 +25,10 @@
 * [[sensors.chart.sh]]
 * [[squid.chart.sh]]
 
-**Other Plugins**
-* [[SMA Webbox Plugin]] in Node.js
+**Node.js Plugins**
+* [[SMA Webbox Plugin]]
+
+**Java Plugins**
 
 ---
 
