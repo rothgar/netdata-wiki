@@ -15,6 +15,8 @@ The configuration file has sections stated with `[section]`. There will be the f
 3. `[plugin:NAME]` one such section for each plugin enabled
 4. `[CHART_NAME]` once such section for each chart defined
 
+The configuration file is a `name = value` dictionary. Netdata will not complain if you set options unknown to it. When you check the running configuration by accessing the URL `/netdata.conf` on your netdata server, netdata will add a comment on settings it does not currently use.
+
 ### Global options
 
 setting | default | info
