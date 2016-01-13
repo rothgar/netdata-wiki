@@ -11,10 +11,12 @@
 **Data Collection**
 * [[Internal Plugins]]
 * [[External Plugins]]
+
+**Binary Plugins**
 * [[Apps Plugin]]
-* [[Charts.d BASH Plugins]]
 
 **BASH Plugins**
+* [[General Info - charts.d]]
 * [[ap.chart.sh]]
 * [[cpufreq.chart.sh]]
 * [[example.chart.sh]]
