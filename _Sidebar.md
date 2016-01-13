@@ -2,6 +2,7 @@
 * [[Why netdata?]]
 * [[Installation]]
 * [[Configuration]]
+* [[Log Files]]
 * [[Performance]]
 * [[Memory Requirements]]
     - [[Memory Deduplication - Kernel Same Page Merging - KSM]]
