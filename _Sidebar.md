@@ -5,6 +5,10 @@
 * [[Configuration]]
 * [[Log Files]]
 * [[Tracing Options]]
+
+---
+
+**Running Netdata**
 * [[Performance]]
 * [[Memory Requirements]]
     - [[Memory Deduplication - Kernel Same Page Merging - KSM]]
