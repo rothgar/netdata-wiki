@@ -6,7 +6,7 @@ a netdata plugin.
 
 There are 7 lines netdata parses. lines starting with:
 
-- `CHART` - create a new chart
+- `CHART` - create a chart
 - `DIMENSION` - add a dimension to the chart just created
 - `BEGIN` - initialize data collection for a chart
 - `SET` - set the value of a dimension for the initialized chart
