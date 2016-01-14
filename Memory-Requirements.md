@@ -16,8 +16,8 @@ Of course, 3.600 entries is a very short history, especially if data collection 
 
 For a day of data and 1.000 dimensions, you will need: 86.400 seconds * 4 bytes * 1.000 dimensions = 345MB of RAM.
 
-## The future
-
 Currently the only option you have to lower this number is to use **[[Memory Deduplication - Kernel Same Page Merging - KSM]]**.
 
-Currently, I investigate several alternatives to lower this number. The best so far is to split the in-memory round robin database in a small **realtime** database (e.g. an hour long) and a larger **compressed** database to store longer durations. So (for example) every hour netdata will compress the last hour of data using LZ4 (which is very high performing: 350MB/s compression, 1850MB/s decompression) and append these compressed data to the **archive** round robin database. This **archive** database could also be saved to disk and loaded back to memory on demand, when a chart is zoomed or panned to the compressed timeframe. This is future though...
+## The future
+
+I investigate several alternatives to lower this number. The best so far is to split the in-memory round robin database in a small **realtime** database (e.g. an hour long) and a larger **compressed** database to store longer durations. So (for example) every hour netdata will compress the last hour of data using LZ4 (which is very high performing: 350MB/s compression, 1850MB/s decompression) and append these compressed data to the **archive** round robin database. This **archive** database could also be saved to disk and loaded back to memory on demand, when a chart is zoomed or panned to the compressed timeframe. This is future though...
