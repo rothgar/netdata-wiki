@@ -2,9 +2,11 @@
 
 Although `netdata` does all its calculations using `long double` (128 bit) arithmetics, it stores all values using a **custom-made 32-bit number**.
 
-This custom-made number can store in 29 bits values from -167772150000000.0 to  167772150000000.0 with a precision of 0.00001 (yes, it is a floating point number, meaning that higher integer values have less decimal precision) and 3 bits for flags.
+This custom-made number can store in 29 bits values from `-167772150000000.0` to  `167772150000000.0` with a precision of 0.00001 (yes, it is a floating point number, meaning that higher integer values have less decimal precision) and 3 bits for flags.
 
 This provides an extremely optimized memory footprint with just 0.0001% max accuracy loss (run: `./netdata --unittest` to see it in action).
+
+## Sizing memory
 
 So, for each dimension of a chart, netdata will need: `4 bytes for the value * the entries of its history`. It will not store any other data. Since all its values are timeseries with fixed collection frequency, the time each collected corresponds can be calculated at run time, using the position of a value in the round robin database.
 
@@ -13,6 +15,8 @@ The default history is 3.600 entries, thus it will need 14.4KB for each chart di
 Of course, 3.600 entries is a very short history, especially if data collection frequency is set to 1 second. You will have just one hour of data.
 
 For a day of data and 1.000 dimensions, you will need: 86.400 seconds * 4 bytes * 1.000 dimensions = 345MB of RAM.
+
+## The future
 
 Currently the only option you have to lower this number is to use **[[Memory Deduplication - Kernel Same Page Merging - KSM]]**.
 
