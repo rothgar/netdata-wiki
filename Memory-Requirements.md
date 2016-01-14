@@ -4,7 +4,7 @@ Although `netdata` does all its calculations using `long double` (128 bit) arith
 
 This custom-made number can store in 29 bits values from `-167772150000000.0` to  `167772150000000.0` with a precision of 0.00001 (yes, it is a floating point number, meaning that higher integer values have less decimal precision) and 3 bits for flags.
 
-This provides an extremely optimized memory footprint with just 0.0001% max accuracy loss (run: `./netdata --unittest` to see it in action).
+This provides an extremely optimized memory footprint with just 0.0001% max accuracy loss.
 
 ## Sizing memory
 
