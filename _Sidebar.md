@@ -41,6 +41,12 @@
 
 ---
 
+**API Documentation**
+* [[REST API v1]]
+* [[Obsolete REST API pre-v1]]
+
+---
+
 **Web Dashboards**
 * [[Overview]]
 * [[Chart Libraries]]
