@@ -6,7 +6,7 @@ Configuration files are placed in `/etc/netdata`.
 
 The daemon configuration file is read from `/etc/netdata/netdata.conf`.
 
-In this file you can configure all aspects of netdata. Netdata provides configuration settings for plugins and charts found when started. You can find all these settings, with their default values, by accessing the file `/netdata.conf` using the URL of your netdata server. For example check the configuration file of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf).
+In this file you can configure all aspects of netdata. Netdata provides configuration settings for plugins and charts found when started. You can find all these settings, with their default values, by accessing the URL `https://netdata.server.hostname:19999/netdata.conf`. For example check the configuration file of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf).
 
 The configuration file has sections stated with `[section]`. There will be the following sections:
 
