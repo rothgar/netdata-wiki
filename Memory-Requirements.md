@@ -20,4 +20,7 @@ Currently the only option you have to lower this number is to use **[[Memory Ded
 
 ## The future
 
-I investigate several alternatives to lower this number. The best so far is to split the in-memory round robin database in a small **realtime** database (e.g. an hour long) and a larger **compressed** database to store longer durations. So (for example) every hour netdata will compress the last hour of data using LZ4 (which is very high performing: 350MB/s compression, 1850MB/s decompression) and append these compressed data to the **archive** round robin database. This **archive** database could also be saved to disk and loaded back to memory on demand, when a chart is zoomed or panned to the compressed timeframe. This is future though...
+I investigate several alternatives to lower this number. The best so far is to split the in-memory round robin database in a small **realtime** database (e.g. an hour long) and a larger **compressed** database to store longer durations. So (for example) every hour netdata will compress the last hour of data using LZ4 (which is very high performing: 350MB/s compression, 1850MB/s decompression) and append these compressed data to the **archive** round robin database. This **archive** database could also be saved to disk and loaded back to memory on demand, when a chart is zoomed or panned to the compressed timeframe.
+
+This is future though. For the moment, if you need a long history, you will need a lot of RAM.
+
