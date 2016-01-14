@@ -4,5 +4,5 @@ Check:
 
 or
 
-- **[Swagger Editor](http://editor.swagger.io/#/?import=http://netdata.firehol.org/netdata-swagger.yaml)**
+- **[Swagger Editor](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/firehol/netdata/master/web/netdata-swagger.yaml)**
 
