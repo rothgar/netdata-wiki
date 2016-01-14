@@ -8,7 +8,7 @@ This provides an extremely optimized memory footprint with just 0.0001% max accu
 
 ## Sizing memory
 
-So, for each dimension of a chart, netdata will need: `4 bytes for the value * the entries of its history`. It will not store any other data. Since all its values are timeseries with fixed collection frequency, the time each collected corresponds can be calculated at run time, using the position of a value in the round robin database.
+So, for each dimension of a chart, netdata will need: `4 bytes for the value * the entries of its history`. It will not store any other data for each value in the time series database. Since all its values are stored in a time series with fixed step, the time each value corresponds can be calculated at run time, using the position of a value in the round robin database.
 
 The default history is 3.600 entries, thus it will need 14.4KB for each chart dimension. If you need 1.000 dimensions, they will occupy just 14.4MB.
 
