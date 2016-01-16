@@ -20,7 +20,7 @@ Software is never ready. Netdata is stable though. I use it on production system
 
 ### Is it released?
 
-No it is not. We could release it though. I need to support a release.
+No it is not. It could be though. I need help to support a release.
 
 ### Can I code too?
 
