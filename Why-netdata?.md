@@ -1,6 +1,6 @@
 # Netdata is unique!
 
-## Per second data collection and visualization.
+## Per second data collection and visualization
 
 **Per second data collection and visualization** is usually only available in dedicated console tools, like `top`, `vmstat`, `iostat`, etc. Netdata brings per second data collection and visualization to all applications, accessible through the web.
 
