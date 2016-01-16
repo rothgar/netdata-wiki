@@ -11,7 +11,7 @@ Click this for a demo:
 
 ## Realtime
 
-When netdata runs on modern computers (even with celeron processors), most chart queries are replied in less than 1 millisecond! Yes, this is right 1 millisecond for calculating the chart, generating JSON text, compressing it and sending it to your web browser. Timings are logged in netdata's `access.log` for you to examine.
+When netdata runs on modern computers (even on CELERON processors), most chart queries are replied in less than 1 millisecond! **Not second, MILLISECOND!** Just 1 millisecond for calculating the chart, generating JSON text, compressing it and sending it to your web browser. Timings are logged in netdata's `access.log` for you to examine.
 
 ## No disk I/O
 
