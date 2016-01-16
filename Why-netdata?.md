@@ -15,7 +15,7 @@ When netdata runs on modern computers (even on CELERON processors), most chart q
 
 Netdata is written in plain `C` and the key system plugins are written in `C` too. Its speed can only be compared to the native console system administration tools.
 
-You can also stress test your netdata installation by running the scripts `tests/stress.sh` found in the distribution.
+You can also stress test your netdata installation by running the script `tests/stress.sh` found in the distribution. Most modern server hardware can serve more than 300 chart refreshes per second per core. A raspberry pi 2, can serve 300+ chart refreshes per second utilizing all 4 cores.
 
 ## No disk I/O at all
 
