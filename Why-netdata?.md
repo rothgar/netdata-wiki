@@ -35,9 +35,9 @@ No need to run something else to access netdata. Of course you can use a firewal
 
 ## Configuration-less
 
-Netdata support plenty of [[Configuration]]. We have done the most though to allow netdata auto-detect everything.
+Netdata supports plenty of [[Configuration]]. Thought, we have done the most to allow netdata auto-detect most if not everything.
 
-Even netdata plugins are designed to allow configuration-less operation. So, you just install and run netdata. You will need to configure something only if it cannot be auto-detected.
+Even netdata plugins are designed to support configuration-less operation. So, you just install and run netdata. You will need to configure something only if it cannot be auto-detected.
 
 ## Visualizes QoS
 
