@@ -6,7 +6,7 @@
 
    You are not convinced? Click this for a demo of why per second data collection is important:
 
-[![image](https://cloud.githubusercontent.com/assets/2662304/12373555/abd56f04-bc85-11e5-9fa1-10aa3a4b648b.png)](http://netdata.firehol.org/demo2.html)
+   [![image](https://cloud.githubusercontent.com/assets/2662304/12373555/abd56f04-bc85-11e5-9fa1-10aa3a4b648b.png)](http://netdata.firehol.org/demo2.html)
 
 2. Realtime
 
