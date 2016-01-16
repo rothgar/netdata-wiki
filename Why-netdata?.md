@@ -39,4 +39,9 @@ Netdata support plenty of [[Configuration]]. We have done the most though to all
 
 Even netdata plugins are designed to allow configuration-less operation. So, you just install and run netdata. You will need to configure something only if it cannot be auto-detected.
 
+## Visualizes QoS
+
+Check this:
+
+![animation5](https://cloud.githubusercontent.com/assets/2662304/12373715/0da509d8-bc8b-11e5-85cf-39d5234bf976.gif)
 
