@@ -29,8 +29,10 @@ You don't need to run netdata as root.
 
 No need to run something else to access netdata. Of course you can use a firewall, or a reverse proxy, to limit access to it. But for most systems, inside your DMZ, just running it will be enough.
 
-## Auto-detection
+## Configuration-less
 
-Netdata plugins are designed to allow configuration-less operation. So, you just install and run netdata. You will need to configure something only if it cannot be auto-detected.
+Netdata support plenty of [[Configuration]]. We have done the most though to allow netdata auto-detect everything.
+
+Even netdata plugins are designed to allow configuration-less operation. So, you just install and run netdata. You will need to configure something only if it cannot be auto-detected.
 
 
