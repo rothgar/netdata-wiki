@@ -11,9 +11,11 @@ Click this for a demo:
 
 ## Realtime
 
-When netdata runs on modern computers (even on CELERON processors), most chart queries are replied in less than 1 millisecond! **Not second, MILLISECOND!** Just 1 millisecond for calculating the chart, generating JSON text, compressing it and sending it to your web browser. Timings are logged in netdata's `access.log` for you to examine.
+When netdata runs on modern computers (even on CELERON processors), most chart queries are replied in less than 3 milliseconds! **Not seconds, MILLISECONDS!** Less than 3 milliseconds for calculating the chart, generating JSON text, compressing it and sending it to your web browser. Timings are logged in netdata's `access.log` for you to examine.
 
 Netdata is written in plain `C` and the key system plugins are written in `C` too. Its speed can only be compared to the native console system administration tools.
+
+You can also stress test your netdata installation by running the scripts `tests/stress.sh` found in the distribution.
 
 ## No disk I/O at all
 
