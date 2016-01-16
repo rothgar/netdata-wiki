@@ -1,28 +1,30 @@
 # Netdata is unique!
 
-## Per second data collection.
+## Per second data collection and visualization.
 
-Per second data collection is usually only available in dedicated console tools, like `top`, `vmstat`, `iostat`, etc. Netdata brings per second data collection to all applications, available through the web.
+**Per second data collection and visualization** is usually only available in dedicated console tools, like `top`, `vmstat`, `iostat`, etc. Netdata brings per second data collection and visualization to all applications, accessible through the web.
 
-You are not convinced per second data collection is important?
+*You are not convinced per second data collection is important?*
 Click this for a demo:
 
 [![image](https://cloud.githubusercontent.com/assets/2662304/12373555/abd56f04-bc85-11e5-9fa1-10aa3a4b648b.png)](http://netdata.firehol.org/demo2.html)
 
 ## Realtime
 
-When netdata runs on modern computers, all chart queries are replied in less than 1 millisecond! Yes, this is right 1 millisecond for calculating the chart, generating JSON text, compressing it and sending it to your web browser. Timings are logged in netdata `access.log` for you to examine.
+When netdata runs on modern computers (even with celeron processors), most chart queries are replied in less than 1 millisecond! Yes, this is right 1 millisecond for calculating the chart, generating JSON text, compressing it and sending it to your web browser. Timings are logged in netdata's `access.log` for you to examine.
 
 ## No disk I/O
 
-Netdata does not use any disk I/O apart its logs and even these can be disabled.
+Netdata does not use any disk I/O, apart its logs and even these can be disabled.
 
-Netdata will use some memory (you size it) and CPU (below 2% of a single core for the daemon, plugins may require more), but normally your server systems should have enough of these resources.
+Netdata will use some memory (you size it, check [[Memory Requirements]]) and CPU (below 2% of a single core for the daemon, plugins may require more, check [[Performance]]), but normally your systems should have plenty of these resources available and spare.
 
-The design goal of **NO DISK I/O AT ALL** means netdata will not disrupt your applications.
+The design goal of **NO DISK I/O AT ALL** effectively means netdata will not disrupt your applications.
 
 ## Embedded web server
 
-No need to run something else to access netdata. Of course you can use a firewall to limit access to it, or 
+No need to run something else to access netdata. Of course you can use a firewall, or a reverse proxy, to limit access to it. But for most systems, inside your DMZ, just running it will be enough.
+
+## 
 
 
