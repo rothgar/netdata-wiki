@@ -25,9 +25,20 @@ No it is not. It could be though. I need help to support a release.
 ### Can I code too?
 
 Of course! Fork the repo, adapt as you see fit and create pull requests.
+If you want to discuss your plans to code on netdata, open a github issue to start the discussion.
 
 ### Do you plan to implement a bigger / better database?
 
 Yes, check the [[Memory Requirements]] page. I also plan to push all the data to dedicated time series databases like OpenTSDB, thus having netdata acting as a collector for them.
 
-### 
+### Is there a roadmap?
+
+Well, I plan to do these:
+
+1. Rename all the charts to follow the naming conventions of OpenTSDB (which will probably require a few changed to the plugins API).
+2. Allow custom dashboards to be created using JSON files
+3. Allow per chart documentation to be stored in server side JSON files (outside the dashboards)
+4. Allow creating dashboards from other dashboards (so that complex dashboards can be created)
+5. Improve the memory database (possibly using the internal dedupper, LZ4 compression, disk archiving, mirroring it to third party databases, etc).
+6. Create more plugins. A lot more plugins.
+7. Allow internal plugins to be forked to external processes (this will protect the netdata daemon from plugin crashes, allow different security schemas for each plugin, etc).
