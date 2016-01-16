@@ -5,7 +5,7 @@
 **Per second data collection and visualization** is usually only available in dedicated console tools, like `top`, `vmstat`, `iostat`, etc. Netdata brings per second data collection and visualization to all applications, accessible through the web.
 
 *You are not convinced per second data collection is important?*
-Click this for a demo:
+**Click** this image for a demo:
 
 [![image](https://cloud.githubusercontent.com/assets/2662304/12373555/abd56f04-bc85-11e5-9fa1-10aa3a4b648b.png)](http://netdata.firehol.org/demo2.html)
 
@@ -43,7 +43,7 @@ Even netdata plugins are designed to allow configuration-less operation. So, you
 
 Netdata visualizes `tc` QoS classes automatically. If you also use FireQOS, it will also collect interface and class names.
 
-Check this animated GIF:
+Check this animated GIF (generated with [ScreenToGif](https://screentogif.codeplex.com/)):
 
 ![animation5](https://cloud.githubusercontent.com/assets/2662304/12373715/0da509d8-bc8b-11e5-85cf-39d5234bf976.gif)
 
