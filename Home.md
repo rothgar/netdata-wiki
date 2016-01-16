@@ -42,3 +42,4 @@ Well, I plan to do these:
 5. Improve the memory database (possibly using the internal dedupper, LZ4 compression, disk archiving, mirroring it to third party databases, etc).
 6. Create more plugins. A lot more plugins.
 7. Allow internal plugins to be forked to external processes (this will protect the netdata daemon from plugin crashes, allow different security schemas for each plugin, etc).
+8. Document everything (especially the dashboard and plugin support)
