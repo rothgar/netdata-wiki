@@ -4,7 +4,8 @@
 
 Per second data collection is usually only available in dedicated console tools, like `top`, `vmstat`, `iostat`, etc. Netdata brings per second data collection to all applications, available through the web.
 
-You are not convinced? Click this for a demo of why per second data collection is important:
+You are not convinced per second data collection is important?
+Click this for a demo:
 
 [![image](https://cloud.githubusercontent.com/assets/2662304/12373555/abd56f04-bc85-11e5-9fa1-10aa3a4b648b.png)](http://netdata.firehol.org/demo2.html)
 
