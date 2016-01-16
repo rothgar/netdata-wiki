@@ -21,10 +21,16 @@ Netdata will use some memory (you size it, check [[Memory Requirements]]) and CP
 
 The design goal of **NO DISK I/O AT ALL** effectively means netdata will not disrupt your applications.
 
+## No root access
+
+You don't need to run netdata as root.
+
 ## Embedded web server
 
 No need to run something else to access netdata. Of course you can use a firewall, or a reverse proxy, to limit access to it. But for most systems, inside your DMZ, just running it will be enough.
 
-## 
+## Auto-detection
+
+Netdata plugins are designed to allow configuration-less operation. So, you just install and run netdata. You will need to configure something only if it cannot be auto-detected.
 
 
