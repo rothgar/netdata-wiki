@@ -8,6 +8,20 @@ It does the following:
 
    From the same output it collects the SSIDs each AP supports by looking for lines `ssid NAME`.
 
+   Example:
+   ```sh
+# iw dev
+phy#0
+        Interface wlan0
+                ifindex 3
+                wdev 0x1
+                addr 7c:dd:90:77:34:2a
+                ssid TSAOUSIS
+                type AP
+                channel 7 (2442 MHz), width: 20 MHz, center1: 2442 MHz
+   ```
+
+
 2. For each interface found, it runs `iw INTERFACE station dump`.
 
    From the output is collects:
@@ -19,6 +33,31 @@ It does the following:
    - signal strength
    - rx/tx bitrate
    - expected throughput
+
+   Example:
+
+   ```sh
+# iw wlan0 station dump
+Station 40:b8:37:5a:ed:5e (on wlan0)
+        inactive time:  910 ms
+        rx bytes:       15588897
+        rx packets:     127772
+        tx bytes:       52257763
+        tx packets:     95802
+        tx retries:     2162
+        tx failed:      28
+        signal:         -43 dBm
+        signal avg:     -43 dBm
+        tx bitrate:     65.0 MBit/s MCS 7
+        rx bitrate:     1.0 MBit/s
+        expected throughput:    32.125Mbps
+        authorized:     yes
+        authenticated:  yes
+        preamble:       long
+        WMM/WME:        yes
+        MFP:            no
+        TDLS peer:      no
+   ```
 
 3. For each interface found, it create 6 charts:
 
@@ -32,6 +71,7 @@ It does the following:
    The above are averages for all connected clients.
 
    Example:
+
    ![image](https://cloud.githubusercontent.com/assets/2662304/12377654/9f566e88-bd2d-11e5-855a-e0ba96b8fd98.png)
 
 ## Configuration
