@@ -14,3 +14,5 @@ Internally the following plugins have been implemented:
  - `/proc/softirqs` (total and per core software interrupts)
  - `ksm` Kernel Same-Page Merging performance (several files under `/sys/kernel/mm/ksm`).
  - `tc` classes (QoS classes - [with FireQOS class names](http://firehol.org/tutorial/fireqos-new-user/)) - there is also a [shell helper](https://github.com/firehol/netdata/blob/master/plugins.d/tc-qos-helper.sh) for this (most parsing is done by the plugin in `C` code).
+
+In case this page is left behind in updates, the source code for runs these internal plugins is [here](https://github.com/firehol/netdata/blob/master/src/plugin_proc.c)
