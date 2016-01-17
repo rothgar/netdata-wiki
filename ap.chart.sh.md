@@ -31,6 +31,9 @@ It does the following:
 
    The above are averages for all connected clients.
 
+   Example:
+   ![image](https://cloud.githubusercontent.com/assets/2662304/12377654/9f566e88-bd2d-11e5-855a-e0ba96b8fd98.png)
+
 ## Configuration
 
 You can only set `ap_update_every=NUMBER` to `/etc/netdata/ap.conf`, to give the data collection frequency.
