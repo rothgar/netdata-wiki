@@ -6,7 +6,9 @@ It has been designed so that the actual script that will do data collection will
 
 Charts.d looks for scripts in `/usr/libexec/netdata/charts.d`. The scripts should have the filename suffix: `.chart.sh`.
 
-# A charts.d collector
+## Charts.d configuration
+
+## A charts.d collector
 
 A charts.d collector is a BASH script defining a few functions.
 
@@ -31,9 +33,9 @@ For a collector called `X`, the following criteria must be met:
 
 The collector script may use more functions or variables. But all of them must begin with `X_`.
 
-The standard netdata plugin variables are also available (check **[[External Plugins]]**).
+The standard netdata plugin variables are also available (check **[[External Plugins]]**). 
 
-## X_check()
+### X_check()
 
 The purpose of the BASH function `X_check()` is to check is the configuration of the script is working. It should also be used for detecting configuration when possible.
 
@@ -41,9 +43,19 @@ For example, if your collector is about monitoring a local mysql database, the `
 
 `X_check()` is run only once for the lifetime of the collector.
 
-## X_create()
+### X_create()
 
 The purpose of the BASH function `X_create()` is to create the charts and dimensions using the standard netdata plugin guides (**[[External Plugins]]**).
 
-`X_create()` will be called just once and only after `X_check()` was successful.
+`X_create()` will be called just once and only after `X_check()` was successful. You can however call it yourself when there is need for it (for example to add a new dimension to an existing chart).
+
+A non-zero return value will disable the collector.
+
+### X_update()
+
+`X_update()` will be called repeatedly every `X_update_every` seconds, to collect new values and send them to netdata, following the netdata plugin guides (**[[External Plugins]]**).
+
+The function will be called with one parameter: microseconds since the last update. This value should be appended to the `BEGIN` statement of every chart updated by the collector script.
+
+A non-zero return value will disable the collector.
 
