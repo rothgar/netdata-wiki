@@ -32,6 +32,18 @@ If you need help, please use the github issues section.
 
 # FAQ
 
+## Why another monitoring tool?
+
+The key goal of **netdata** is to help you achieve **operational excellence**.
+
+To achieve that, it focuses on real-time visualization of what is happening on your system or applications **now**, or in the **recent past**.
+
+- **netdata** is not an NMS.
+- **netdata** is not a database.
+- **netdata** is not an alerting mechanism.
+
+**netdata** tries to visualize the truth of **now**, in its greatest detail, so that you can get insights of what is happening **now**, or what **just happened**, on your systems and applications.
+
 ## Is it ready?
 
 Software is never ready. There is always something to improve.
@@ -45,11 +57,7 @@ No it is not. It could be though.
 ## Can I code too?
 
 Of course! Fork the repo, adapt as you see fit and create pull requests.
-If you want to discuss your plans to code on netdata, open a github issue to start the discussion.
-
-## Do you plan to implement a bigger / better database?
-
-Yes, check the [[Memory Requirements]] page. We also plan to push all the data to dedicated time series databases like OpenTSDB, thus having netdata acting as a collector for them.
+If you want to discuss your plans, open a github issue to start the discussion.
 
 ## Is there a roadmap?
 
