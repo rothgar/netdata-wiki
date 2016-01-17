@@ -14,13 +14,16 @@ For a collector called `X`, the following criteria must be met:
 
 1. The collector script must be called `X.chart.sh` and placed in `/usr/libexec/netdata/charts.d`.
 
-2. If the collector script needs a configuration, it should be called `X.conf` and placed in `/etc/netdata`.
+2. If the collector script needs a configuration, it should be called `X.conf` and placed in `/etc/netdata`. The configuration file `X.conf` is also a BASH script itself.
 
-3. All functions and global variables defined in the script must begin with `X_`.
+3. All functions and global variables defined in the script and its configuration, must begin with `X_`.
 
 4. The following functions must be defined:
+
    - `X_check()` - returns 0 or 1 depending on whether the collector is able to run or not (following the standard Linux command line return codes: 0 = OK, the collector can operate and 1 = FAILED, the collector cannot be used).
+
    - `X_create()` - creates the netdata charts, following the standard netdata plugin guides as described in **[[External Plugins]]** (commands `CHART` and `DIMENSION`). The return value does matter: 0 = OK, 1 = FAILED.
+
    - `X_update()` - collects the values for the defined charts, following the standard netdata plugin guides as described in **[[External Plugins]]** (commands `BEGIN`, `SET`, `END`). The return value also matters: 0 = OK, 1 = FAILED.
 
 5. The following global variables are available to be set:
