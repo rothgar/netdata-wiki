@@ -6,7 +6,7 @@ This wiki is the whole of it. Other than the wiki, currently there is the... sou
 
 I need help documenting everything. If you can help, please open a github issue stating you want to help. I'll be notified.
 
-You should at least read the section **[[Why netdata?]]**. It has a good overview of the key benefits of installing netdata on your systems.
+You should at least walk through the pages of the wiki. They has a good overview of netdata and how to use it.
 
 ## Support
 
