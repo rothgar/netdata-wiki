@@ -10,7 +10,10 @@ You should at least read the section **[[Why netdata?]]**. It has a good overvie
 
 ## Support
 
-Please use the github issues section.
+If you need help, please use the github issues section.
+
+---
+
 
 # FAQ
 
