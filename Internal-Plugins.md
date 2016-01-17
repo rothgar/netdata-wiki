@@ -14,6 +14,7 @@ Internally the following plugins have been implemented:
  - `/proc/net/rpc/nfsd` (NFS server statistics for both v3 and v4 NFS servers)
  - `/proc/interrupts` (total and per core hardware interrupts)
  - `/proc/softirqs` (total and per core software interrupts)
+ - `/proc/sys/kernel/random/entropy_avail` (random numbers pool availability - used in cryptography)
  - `ksm` Kernel Same-Page Merging performance (several files under `/sys/kernel/mm/ksm`).
  - `netdata` (internal netdata resources utilization)
 
