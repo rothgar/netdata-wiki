@@ -29,7 +29,7 @@ To achieve that, it focuses on real-time visualization of what is happening on y
 
 **netdata** tries to visualize the truth of **now**, in its greatest detail, so that you can get insights of what is happening **now** and what **just happened**, on your systems and applications.
 
-Its key value is: **non disruptive, real-time visualization, in the greatest possible detail**.
+Its key value is: **non disruptive, real-time monitoring and visualization, in the greatest possible detail**.
 
 ---
 
