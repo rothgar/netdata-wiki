@@ -35,12 +35,12 @@ Its key value is: **non disruptive, real-time monitoring and visualization, in t
 
 You run a daemon on your linux: `netdata`. This daemon is written in C and is extremely lightweight.
 
-netdata:
+**netdata**:
 
-  - Spawns threads to collect all the data from all sources
-  - Keeps track of the collected values in memory (no disk I/O at all)
-  - Generates JSON and JSONP HTTP responses containing all the data needed for the web graphs
+  - Spawns threads to collect all the data from all sources - it uses **[[Internal Plugins]]** and **[[External Plugins]]** for this.
+  - Keeps track of the collected values in memory (no disk I/O at all, check **[[Memory Requirements]]**).
   - Is a standalone web server that serves its static files, for rendering its dashboards.
+  - It provides a **[[REST API v1]]** for your browser to access the data.
 
 If you install it on all your systems, each **netdata** will be standalone. There is no *central* netdata. Your web browser is the only entity that can *connect* all the netdata installations together. netdata dashboards can have charts from multiple netdata installations and these charts will still behave, on your browser, as if they were coming from the same netdata server!
 
