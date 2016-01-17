@@ -32,3 +32,18 @@ For a collector called `X`, the following criteria must be met:
 The collector script may use more functions or variables. But all of them must begin with `X_`.
 
 The standard netdata plugin variables are also available (check **[[External Plugins]]**).
+
+## X_check()
+
+The purpose of the BASH function `X_check()` is to check is the configuration of the script is working. It should also be used for detecting configuration when possible.
+
+For example, if your collector is about monitoring a local mysql database, the `X_check()` function may attempt to connect to a local mysql database to find out if it can read the values it needs. Keep in mind that configuration should override auto-detection.
+
+`X_check()` is run only once for the lifetime of the collector.
+
+## X_create()
+
+The purpose of the BASH function `X_create()` is to create the charts and dimensions using the standard netdata plugin guides (**[[External Plugins]]**).
+
+`X_create()` will be called just once and only after `X_check()` was successful.
+
