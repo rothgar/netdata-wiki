@@ -22,9 +22,9 @@ The files that `CONFIG_KSM=y` offers include:
 
 So, by default `ksmd` is just disabled. It will not harm performance and the user/admin can control the CPU resources he/she is willing `ksmd` to use.
 
-## Enabled `ksmd` kernel daemon
+## Run `ksmd` kernel daemon
 
-To activate `ksmd` you need to run:
+To activate / run `ksmd` you need to run:
 
 ```sh
 echo 1 >/sys/kernel/mm/ksm/run
@@ -33,6 +33,7 @@ echo 1000 >/sys/kernel/mm/ksm/sleep_millisecs
 
 With these settings ksmd does not even appear in the running process list (it will run once per second and evaluate 100 pages for de-duplication).
 
+Put the above lines in your boot sequence (`/etc/rc.local` or equivalent) to have `ksmd` run at boot.
 
 ## Monitoring Kernel Memory de-duplication performance
 
