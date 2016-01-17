@@ -17,7 +17,7 @@ Internally the following plugins have been implemented:
  - `ksm` Kernel Same-Page Merging performance (several files under `/sys/kernel/mm/ksm`).
  - `netdata` (internal netdata resources utilization)
 
-In case this page is left behind in updates, the source code for runs these internal plugins is [here](https://github.com/firehol/netdata/blob/master/src/plugin_proc.c)
+In case this page is left behind in updates, the source code for runs these internal plugins is [here](https://github.com/firehol/netdata/blob/master/src/plugin_proc.c).
 
 
 ## QoS
@@ -36,3 +36,13 @@ The source of the tc plugin is [here](https://github.com/firehol/netdata/blob/ma
 There is also a plugin that collects NFACCT statistics. This plugin is currently disabled by default, because it requires root access. I have to move the code to an external plugin to setuid just the plugin not the whole netdata server.
 
 You can build netdata with it to test it though. Just run `./configure` with the option `--enable-plugin-nfacct` (and any other options you may need). Remember, you have to tell netdata you want it to run as `root` for this plugin to work.
+
+## Idle Jitter
+
+Idle jitter is calculated by netdata. It works like this:
+
+A thread is spawned that requests to sleep for a few microseconds. When the system wakes it up, it measures how many microseconds have passed. The different between the requested and the actual duration of the sleep, is the idle jitter.
+
+This number is useful in real-time environments, where CPU jitter can affect the quality of the service (like VoIP media gateways).
+
+The source code is [here](https://github.com/firehol/netdata/blob/master/src/plugin_idlejitter.c).
