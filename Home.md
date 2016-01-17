@@ -32,7 +32,7 @@ If you want to discuss your plans to code on netdata, open a github issue to sta
 
 ## Do you plan to implement a bigger / better database?
 
-Yes, check the [[Memory Requirements]] page. I also plan to push all the data to dedicated time series databases like OpenTSDB, thus having netdata acting as a collector for them.
+Yes, check the [[Memory Requirements]] page. We also plan to push all the data to dedicated time series databases like OpenTSDB, thus having netdata acting as a collector for them.
 
 ## Is there a roadmap?
 
