@@ -40,7 +40,7 @@ Yes, check the [[Memory Requirements]] page. I also plan to push all the data to
 
 Well, I plan to do these:
 
-1. Rename all the charts to follow the naming conventions of OpenTSDB (which will probably require a few changes to the plugins API).
+1. Rename all the charts to follow the naming conventions of OpenTSDB (which will probably require a few changes to the plugins API and the default web dashboard).
 2. Allow custom dashboards to be defined using JSON files, to avoid writing HTML
 3. Allow per chart documentation to be stored in server side JSON files (outside the dashboards and the netdata daemon)
 4. Allow creating dashboards from other dashboards (so that complex dashboards can be created)
