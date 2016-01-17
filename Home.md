@@ -44,7 +44,7 @@ You run a daemon on your linux: `netdata`. This daemon is written in C and is ex
 
 If you install it on all your systems, each **netdata** will be standalone. There is no *central* netdata. Your web browser is the only entity that can *connect* all the netdata installations together. netdata dashboards can have charts from multiple netdata installations and these charts will still behave, on your browser, as if they were coming from the same netdata server!
 
-For example, this is a dashboard for monitoring all my Pis and linux servers on my home:
+For example, this is a dashboard for monitoring all my Pis and linux servers at my home (these charts are coming from 7 different netdata servers):
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/12377813/f8a6e1c0-bd32-11e5-815c-080d688ba32e.png)
 
