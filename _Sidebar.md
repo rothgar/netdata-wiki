@@ -1,4 +1,5 @@
 **General**
+* [[Home]]
 * [[Why netdata?]]
 * [[Installation]]
 * [[Command Line Options]]
