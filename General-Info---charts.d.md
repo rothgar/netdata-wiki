@@ -2,11 +2,25 @@
 
 Charts.d is BASH script that allows the data collection using simple scripts.
 
-It has been designed so that the actual script that will do data collection will be permanently in memory, collecting data with as little overheads as possible.
+It has been designed so that the actual script that will do data collection will be permanently in memory, collecting data with as little overheads as possible (i.e. initialize once, repeatedly collect values with minimal overhead).
 
 Charts.d looks for scripts in `/usr/libexec/netdata/charts.d`. The scripts should have the filename suffix: `.chart.sh`.
 
 ## Charts.d configuration
+
+Charts.d itself can be configured using the configuration file `/etc/netdata/charts.d.conf`. This file is also a BASH script.
+
+In this file, you can place statements like this:
+
+```
+X=yes
+Y=no
+```
+
+where `X` and `Y` are the names of individual charts.d collector scripts.
+
+When set to `yes`, charts.d will evaluate the collector script (see below). When set to `no`, charts.d will ignore the collector script.
+
 
 ## A charts.d collector
 
@@ -58,4 +72,60 @@ A non-zero return value will disable the collector.
 The function will be called with one parameter: microseconds since the last update. This value should be appended to the `BEGIN` statement of every chart updated by the collector script.
 
 A non-zero return value will disable the collector.
+
+### Useful functions charts.d provides
+
+Collector scripts can use the following charts.d functions:
+
+#### require_cmd command
+
+`require_cmd` will check if a command is available in the running system.
+
+For example, your `X_check()` function may use it like this:
+
+```sh
+mysql_check() {
+    require_cmd mysql || return 1
+    return 0
+}
+```
+
+Using the above, if the command `mysql` is not available in the system, the `mysql` collector will be disabled.
+
+#### fixid "string"
+
+`fixid` will get a string and return a properly formatted id for a chart or dimension.
+
+This is an expensive function that should not be used in `X_update()`. You can keep the generated id in a BASH associative array to have the values availables in `X_update()`, like this:
+
+```sh
+declare -A X_ids=()
+X_create() {
+   local name="a very bad name for id"
+
+   X_ids[$name]="$(fixid "$name")"
+}
+
+X_update() {
+   local microseconds="$1"
+
+   ...
+   local name="a very bad name for id"
+   ...
+
+   echo "BEGIN ${X_ids[$name]} $microseconds"
+   ...
+}
+```
+
+### Debugging your collectors
+
+You can run `charts.d.plugin` by hand with something like this:
+
+```sh
+
+/usr/libexec/netdata/plugins/charts.d.plugin debug 1 X Y Z
+```
+
+Charts.d will run in `debug` mode, with an update frequency of `1`, evaluating only the collector scripts `X`, `Y` and `Z`. You can define zero or more collector scripts. If none is defined, charts.d will evaluate all collector script available.
 
