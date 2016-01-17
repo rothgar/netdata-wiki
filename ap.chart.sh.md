@@ -59,7 +59,7 @@ Station 40:b8:37:5a:ed:5e (on wlan0)
         TDLS peer:      no
    ```
 
-3. For each interface found, it create 6 charts:
+3. For each interface found, it creates 6 charts:
 
    - Number of Connected clients
    - Bandwidth
