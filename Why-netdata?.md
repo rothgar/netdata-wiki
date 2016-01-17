@@ -27,7 +27,9 @@ The design goal of **NO DISK I/O AT ALL** effectively means netdata will not dis
 
 ## No root access
 
-You don't need to run netdata as root.
+You don't need to run netdata as root. If started as root, netdata will switch to the `netdata` user (or any other user given in its configuration or command line argument).
+
+There are a few plugins that in order to collect values need root access. These (and only these) are setuid to root.
 
 ## Embedded web server
 
