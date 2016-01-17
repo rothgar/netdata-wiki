@@ -13,14 +13,14 @@ Charts.d itself can be configured using the configuration file `/etc/netdata/cha
 In this file, you can place statements like this:
 
 ```
-X=yes
-Y=no
+enable_all_charts="yes"
+X="yes"
+Y="no"
 ```
 
-where `X` and `Y` are the names of individual charts.d collector scripts.
+where `X` and `Y` are the names of individual charts.d collector scripts. When set to `yes`, charts.d will evaluate the collector script (see below). When set to `no`, charts.d will ignore the collector script.
 
-When set to `yes`, charts.d will evaluate the collector script (see below). When set to `no`, charts.d will ignore the collector script.
-
+The variable `enable_all_charts` sets the default enable/disable state for all charts.
 
 ## A charts.d collector
 
@@ -129,3 +129,16 @@ You can run `charts.d.plugin` by hand with something like this:
 
 Charts.d will run in `debug` mode, with an update frequency of `1`, evaluating only the collector scripts `X`, `Y` and `Z`. You can define zero or more collector scripts. If none is defined, charts.d will evaluate all collector script available.
 
+## Running multiple instances of charts.d.plugin
+
+Charts.d will call the `X_update()` function one after another. This means that a delay in collector `X` will also delay the collection of `Y` and `Z`.
+
+You can have multiple charts.d running to overcome this problem.
+
+This is what you need to do:
+
+1. Decide a new name for the new charts.d instance: example `charts2.d`.
+2. Create/edit the files `/etc/netdata/charts.d.conf` and `/etc/netdata/charts2.d.conf` and set enable / disable the collector you want each to run. Remember to set `enable_all_charts="no"` to both of them, and enable the individual collectors for each.
+3. link `/usr/libexec/netdata/plugins.d/charts.d.plugin` to `/usr/libexec/netdata/plugins.d/charts2.d.plugin`. Netdata will spawn a new charts.d process.
+
+Do them in this order, since netdata will (by default) attempt to start new plugins soon after they are created in `/usr/libexec/netdata`.
