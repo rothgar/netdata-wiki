@@ -19,7 +19,9 @@ If you need help, please use the github issues section.
 
 ## Is it ready?
 
-Software is never ready. Netdata is stable though. I use it on production systems without any issues.
+Software is never ready. There is always something to improve.
+
+**Netdata is stable** though. I use it on production systems without any issues.
 
 ## Is it released?
 
