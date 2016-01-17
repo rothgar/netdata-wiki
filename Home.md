@@ -4,9 +4,7 @@
 
 This wiki is the whole of it. Other than the wiki, currently there is the... source code.
 
-I need help documenting everything. If you can help, please open a github issue stating you want to help. I'll be notified.
-
-You should at least walk through the pages of the wiki. They has a good overview of netdata, what it can do and how to use it.
+You should at least walk through the pages of the wiki. They have a good overview of netdata, what it can do and how to use it.
 
 ## Support
 
@@ -21,11 +19,11 @@ If you need help, please use the github issues section.
 
 Software is never ready. There is always something to improve.
 
-**Netdata is stable**. I use it on production systems without any issues.
+**Netdata is stable**. We use it on production systems without any issues.
 
 ## Is it released?
 
-No it is not. It could be though. I need help to support a release.
+No it is not. It could be though.
 
 ## Can I code too?
 
@@ -38,7 +36,7 @@ Yes, check the [[Memory Requirements]] page. I also plan to push all the data to
 
 ## Is there a roadmap?
 
-Well, I plan to do these:
+Well, we plan to do these:
 
 1. Rename all the charts to follow the naming conventions of OpenTSDB (which will probably require a few changes to the plugins API and the default web dashboard).
 2. Allow custom dashboards to be defined using JSON files, to avoid writing HTML
