@@ -33,6 +33,6 @@ The source of the tc plugin is [here](https://github.com/firehol/netdata/blob/ma
 
 ## Netfilter Accounting
 
-There is also a plugin that collects NFACCT statistics. This plugin is currently disabled because it requires root access. I have to move it to an external plugin.
+There is also a plugin that collects NFACCT statistics. This plugin is currently disabled by default, because it requires root access. I have to move the code to an external plugin to setuid just the plugin not the whole netdata server.
 
 You can build netdata with it to test it though. Just run `./configure` with the option `--enable-plugin-nfacct` (and any other options you may need). Remember, you have to tell netdata you want it to run as `root` for this plugin to work.
