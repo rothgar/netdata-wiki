@@ -64,13 +64,11 @@ Station 40:b8:37:5a:ed:5e (on wlan0)
 3. For each interface found, it creates 6 charts:
 
    - Number of Connected clients
-   - Bandwidth
-   - Packets
-   - Transmit Issues
-   - Average Signal
-   - Average Bitrate (including average expected throughput)
-
-   All the above (except the number of connected clients) are averages for all connected clients.
+   - Bandwidth for all clients
+   - Packets for all clients
+   - Transmit Issues for all clients
+   - Average Signal among all clients
+   - Average Bitrate (including average expected throughput) among all clients
 
    Example:
 
