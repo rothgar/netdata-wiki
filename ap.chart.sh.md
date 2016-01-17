@@ -2,6 +2,8 @@
 
 The `ap` collector visualizes data related to access points.
 
+The source code is [here](https://github.com/firehol/netdata/blob/master/charts.d/ap.chart.sh).
+
 It does the following:
 
 1. Runs `iw dev` searching for interfaces that have `type AP`.
