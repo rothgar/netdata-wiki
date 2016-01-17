@@ -17,21 +17,6 @@ You can use it to monitor all your systems and applications. It will run on Linu
 
 Out of the box, it comes with plugins that collect key system metrics and metrics of popular applications.
 
-## Documentation
-
-This wiki is the whole of it. Other than the wiki, currently there is the... source code.
-
-You should at least walk through the pages of the wiki. They have a good overview of netdata, what it can do and how to use it.
-
-## Support
-
-If you need help, please use the github issues section.
-
----
-
-
-# FAQ
-
 ## Why another monitoring tool?
 
 The key goal of **netdata** is to help you achieve **operational excellence**.
@@ -43,6 +28,25 @@ To achieve that, it focuses on real-time visualization of what is happening on y
 - **netdata** is not an alerting mechanism.
 
 **netdata** tries to visualize the truth of **now**, in its greatest detail, so that you can get insights of what is happening **now**, or what **just happened**, on your systems and applications.
+
+---
+
+# Documentation
+
+This wiki is the whole of it. Other than the wiki, currently there is the... source code.
+
+You should at least walk through the pages of the wiki. They have a good overview of netdata, what it can do and how to use it.
+
+---
+
+# Support
+
+If you need help, please use the github issues section.
+
+---
+
+
+# FAQ
 
 ## Is it ready?
 
