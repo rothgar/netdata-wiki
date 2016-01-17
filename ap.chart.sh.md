@@ -70,7 +70,7 @@ Station 40:b8:37:5a:ed:5e (on wlan0)
    - Average Signal
    - Average Bitrate (including average expected throughput)
 
-   The above are averages for all connected clients.
+   All the above (except the number of connected clients) are averages for all connected clients.
 
    Example:
 
