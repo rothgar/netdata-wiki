@@ -15,10 +15,20 @@ Internally the following plugins have been implemented:
  - `/proc/interrupts` (total and per core hardware interrupts)
  - `/proc/softirqs` (total and per core software interrupts)
  - `ksm` Kernel Same-Page Merging performance (several files under `/sys/kernel/mm/ksm`).
- - `tc` classes (QoS classes - [with FireQOS class names](http://firehol.org/tutorial/fireqos-new-user/)) - there is also a [shell helper](https://github.com/firehol/netdata/blob/master/plugins.d/tc-qos-helper.sh) for this (most parsing is done by the plugin in `C` code).
  - `netdata` (internal netdata resources utilization)
 
 In case this page is left behind in updates, the source code for runs these internal plugins is [here](https://github.com/firehol/netdata/blob/master/src/plugin_proc.c)
+
+
+## QoS
+
+Netdata monitors `tc` QoS classes for all interfaces.
+
+If you also use [FireQOS](http://firehol.org/tutorial/fireqos-new-user/)) it will collect interface and class names.
+
+There is a [shell helper](https://github.com/firehol/netdata/blob/master/plugins.d/tc-qos-helper.sh) for this (all parsing is done by the plugin in `C` code - this shell script is just a configuration for the command to run to get `tc` output).
+
+The source of the tc plugin is [here](https://github.com/firehol/netdata/blob/master/src/plugin_tc.c). It is somewhat complex, because a state machine was needed to keep track of all the `tc` classes, including the pseudo classes tc dynamically creates.
 
 
 ## Netfilter Accounting
