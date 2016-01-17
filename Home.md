@@ -15,7 +15,7 @@ It has been designed to be installed **on every system**, without disrupting the
 
 You can use it to monitor all your systems and applications. It will run on Linux PCs, servers or embedded devices.
 
-Out of the box, it comes with plugins for data collection about system information and popular applications.
+Out of the box, it comes with plugins that collect key system metrics and metrics of popular applications.
 
 ## Documentation
 
