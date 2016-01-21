@@ -278,7 +278,8 @@ You can prepend colors to it (so that your will be used first) using this:
      data-show-value-of-out-at="eth0_out_value"
      ></div>
 
-My eth0 interface, is receiving <span id="eth0_in_value"></span> and transmitting <span id="eth0_out_value"></span>.
+My eth0 interface, is receiving <span id="eth0_in_value"></span>
+and transmitting <span id="eth0_out_value"></span>.
 ```
 
 ### Hiding the legend of a chart
