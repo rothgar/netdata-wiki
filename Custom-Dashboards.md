@@ -139,13 +139,13 @@ You can specify the duration of the chart (how much time of data it will show) u
      ></div>
 ```
 
-`AFTER_SECONDS` and `BEFORE_SECONDS` are numbers representing seconds.
+`AFTER_SECONDS` and `BEFORE_SECONDS` are numbers representing a time-frame in seconds.
 
 The can be either:
 
-- **absolute** unix timestamps (in javascript terms, they are `new Date().getTime() / 1000`, or
+- **absolute** unix timestamps (in javascript terms, they are `new Date().getTime() / 1000`. Using absolute timestamps you can have a chart showing always the same time-frame.
 
-- **relative** number of seconds to now, so to show the last 10 minutes of data, `AFTER_SECONDS` must be `-600` and `BEFORE_SECONDS` must be `0`. If you want the chart to autorefresh to current values, you need to specify **relative** values.
+- **relative** number of seconds to now. To show the last 10 minutes of data, `AFTER_SECONDS` must be `-600` (relative to now) and `BEFORE_SECONDS` must be `0` (meaning: now). If you want the chart to auto-refresh the current values, you need to specify **relative** values.
 
 ### Chart dimensions
 
@@ -173,7 +173,6 @@ Each chart can get data from a different netdata server. You can give per chart 
      ></div>
 ```
 
-
 ### Chart library
 
 The default chart library is `dygraph`. You set a different chart library per chart using this:
@@ -181,6 +180,38 @@ The default chart library is `dygraph`. You set a different chart library per ch
 ```html
 <div data-netdata="unique.id"
      data-chart-library="gauge"
+     ></div>
+```
+
+Each chart library may support more chart-library specific settings. Please refer to the documentation of the chart library you are interested, in this wiki.
+
+
+### Data points
+
+For the time-frame requested, `dashboard.js` will use the chart dimensions and the settings of the chart library to find out how many data points it can show.
+
+For example, most line chart libraries are using 3 pixels per chart. If the chart shows 10 minutes of data (600 seconds), its update frequency is 1 second, and the chart width is 1800 pixels, then `dashboard.js` will request from the netdata server: 10 minutes of data, represented in 600 points, and the chart will be refreshed per second. If the user resizes the window so that the chart becomes 600 pixels wide, then `dashboard.js` will request the same 10 minutes of data, represented in 200 points and the chart will be refreshed once every 3 seconds.
+
+If you need to have a fixed number of points in the data source retrieved from the netdata server, you can set:
+
+```html
+<div data-netdata="unique.id"
+     data-points="DATA_POINTS"
+     ></div>
+```
+
+Where `DATA_POINTS` is the number of points you need.
+
+
+### Data grouping method
+
+Netdata supports **average** (the default) or **max** grouping methods. The grouping method is used when the netdata server is requested to return fewer points for a time-frame, compared to the number of points available.
+
+You can give it per chart, using:
+
+```html
+<div data-netdata="unique.id"
+     data-method="max"
      ></div>
 ```
 
