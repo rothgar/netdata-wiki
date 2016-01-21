@@ -202,6 +202,15 @@ If you need to have a fixed number of points in the data source retrieved from t
 
 Where `DATA_POINTS` is the number of points you need.
 
+You can also overwrite the pixels-per-point per chart using this:
+
+```html
+<div data-netdata="unique.id"
+     data-pixels-per-point="PIXELS_PER_POINT"
+     ></div>
+```
+
+Where `PIXELS_PER_POINT` is the number of pixels each data point should occupy.
 
 ### Data grouping method
 
