@@ -9,6 +9,8 @@ You can:
 
 netdata charts can also be added to existing web pages.
 
+Check this **[very simple working example of a custom dashboard](http://netdata.firehol.org/demo.html)**, and its **[html source](https://github.com/firehol/netdata/blob/master/web/demo.html)**.
+
 ## Example empty dashboard
 
 If you need to create a new dashboard on an empty page, we suggest the following header:
