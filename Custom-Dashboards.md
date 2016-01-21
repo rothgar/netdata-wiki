@@ -9,7 +9,7 @@ You can:
 
 netdata charts can also be added to existing web pages.
 
-## Empty dashboard
+## Example empty dashboard
 
 If you need to create a new dashboard on an empty page, we suggest the following header:
 
@@ -35,7 +35,7 @@ If you need to create a new dashboard on an empty page, we suggest the following
 ```
 
 
-## Prerequisites
+## dashboard.js
 
 To add netdata charts to any web page (dedicated to netdata or not), you need to include the `/dashboard.js` file of a netdata server.
 
@@ -45,7 +45,9 @@ For example, if your netdata server listens at `http://box:19999/`, you will nee
   <script type="text/javascript" src="http://box:19999/dashboard.js"></script>
 ```
 
-`dashboard.js` will load automatically the following:
+### what dashboard.js does?
+
+`dashboard.js` will automatically load the following:
 
 1. `dashboard.css`, required for the netdata charts
 
@@ -65,8 +67,11 @@ For example, if your netdata server listens at `http://box:19999/`, you will nee
 
 6. `font-awesome.min.css`, for icons.
 
+When `dashboard.js` loads will scan the page for elements that define charts (see below) and immediately start refreshing them.
 
-When `dashboard.js` loads will scan the page for elements that define charts (see below). If your web page is not static and you plan to add charts using javascript, you can tell `dashboard.js` not to start immediately by adding this fragment before loading it:
+### Prevent dashboard.js from starting chart refreshes
+
+If your web page is not static and you plan to add charts using javascript, you can tell `dashboard.js` not to start processing charts immediately after loaded, by adding this fragment before loading it:
 
 ```html
 <script>var netdataDontStart = true;</script>
@@ -79,4 +84,15 @@ You can tell it to start processing the page, by running this javascript code:
 NETDATA.start();
 ```
 
+### The default netdata server
+
+`dashboard.js` will attempt to auto-detect the URL of the netdata server it is loaded from, and set this server as the default netdata server for all charts.
+
+If you need to set any other URL as the default netdata server for all charts that do not specify a netdata server, add this before loading `dashboard.js`:
+
+```html
+<script type="text/javascript">var netdataServer = "http://your.netdata.server:19999";</script>
+```
+
 ## Adding charts
+
