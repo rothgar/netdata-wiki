@@ -84,6 +84,21 @@ You can tell it to start processing the page, by running this javascript code:
 NETDATA.start();
 ```
 
+Be careful not to call the `NETDATA.start()` multiple times. Each call to this function will spawn a new thread that will start refreshing the charts.
+
+If, after calling `NETDATA.start()` you need to update the page (or even get your javascript code synchronized with `dashboard.js`), you can call (after you loaded `dashboard.js`):
+
+```js
+NETDATA.pause(function() {
+  // ok, it is paused
+
+  // update the DOM as you wish
+
+  // and then call this to let the charts refresh:
+  NETDATA.unpause();
+});
+```
+
 ### The default netdata server
 
 `dashboard.js` will attempt to auto-detect the URL of the netdata server it is loaded from, and set this server as the default netdata server for all charts.
