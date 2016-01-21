@@ -112,7 +112,9 @@ If you need to set any other URL as the default netdata server for all charts th
 <script type="text/javascript">var netdataServer = "http://your.netdata.server:19999";</script>
 ```
 
-## Adding charts
+---
+
+# Adding charts
 
 To add charts, you need to add a `div` for each of them. Each of these `div` elements accept a few `data-` attributes:
 
@@ -224,3 +226,89 @@ You can give it per chart, using:
      ></div>
 ```
 
+### Selecting dimensions
+
+By default, `dashboard.js` will show all the dimensions of the chart.
+You can select specific dimensions using this:
+
+```html
+<div data-netdata="unique.id"
+     data-dimensions="dimension1,dimension2,dimension3,..."
+     ></div>
+```
+
+### Chart title
+
+You can overwrite the title of the chart using this:
+
+```html
+<div data-netdata="unique.id"
+     data-title="my super chart"
+     ></div>
+```
+
+### Chart units
+
+You can overwrite the units of measurement of the dimensions of the chart, using this:
+
+```html
+<div data-netdata="unique.id"
+     data-units="words/second"
+     ></div>
+```
+
+### Chart colors
+
+`dashboard.js` has an internal palette of colors for the dimensions of the charts.
+You can prepend colors to it (so that your will be used first) using this:
+
+```html
+<div data-netdata="unique.id"
+     data-colors="#AABBCC #DDEEFF ..."
+     ></div>
+```
+
+### Extracting dimension values
+
+`dashboard.js` can update the selected values of the chart at elements you specify. For example, let's assume we have a chart that measures the bandwidth of eth0, with 2 dimensions `in` and `out`. You can use this:
+
+```html
+<div data-netdata="net.eth0"
+     data-show-value-of-in-at="eth0_in_value"
+     data-show-value-of-out-at="eth0_out_value"
+     ></div>
+
+My eth0 interface, is receiving <span id="eth0_in_value"></span> and transmitting <span id="eth0_out_value"></span>.
+```
+
+### Hiding the legend of a chart
+
+On charts that by default have a legend managed by `dashboard.js` you can remove it, using this:
+
+```html
+<div data-netdata="unique.id"
+     data-legend="no"
+     ></div>
+```
+
+### API options
+
+You can append netdata **[[REST API v1]]** data options, using this:
+
+```html
+<div data-netdata="unique.id"
+     data-append-options="absolute,percentage"
+     ></div>
+```
+
+### Chart library performance
+
+`dashboard.js` measures the performance of the chart library when it renders the charts. You can specify an element ID you want this information to be visualized, using this:
+
+```html
+<div data-netdata="unique.id"
+     data-dt-element-name="measurement1"
+     ></div>
+
+refreshed in <span id="measurement1"></span> milliseconds!
+```
