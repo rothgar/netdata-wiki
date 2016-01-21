@@ -153,8 +153,6 @@ You can set the dimensions of the chart using this:
 
 ```html
 <div data-netdata="unique.id"
-     data-after="AFTER_SECONDS"
-     data-before="BEFORE_SECONDS"
      data-width="WIDTH"
      data-height="HEIGHT"
      ></div>
@@ -163,11 +161,17 @@ You can set the dimensions of the chart using this:
 `WIDTH` and `HEIGHT` can be anything CSS accepts for width and height (e.g. percentages, pixels, etc).
 Keep in mind that for certain chart libraries, `dashboard.js` may apply an aspect ratio to these.
 
-If you want `dashboard.js` to remember permanently (browser local storage) the dimensions of the chart (the user may resize them), you can add: `data-id="SETTINGS_ID"`, where `SETTINGS_ID` is anything that will be common for this chart across user sessions.
+If you want `dashboard.js` to remember permanently (browser local storage) the dimensions of the chart (the user may resize it), you can add: `data-id="SETTINGS_ID"`, where `SETTINGS_ID` is anything that will be common for this chart across user sessions.
 
 ### Netdata server
 
-Each chart can get data from a different netdata server. You can give per chart the netdata server using `data-host="http://another.netdata.server:19999/"`.
+Each chart can get data from a different netdata server. You can give per chart the netdata server using:
+
+```html
+<div data-netdata="unique.id"
+     data-host="http://another.netdata.server:19999/"
+     ></div>
+```
 
 
 ### Chart library
@@ -176,10 +180,6 @@ The default chart library is `dygraph`. You set a different chart library per ch
 
 ```html
 <div data-netdata="unique.id"
-     data-after="AFTER_SECONDS"
-     data-before="BEFORE_SECONDS"
-     data-width="WIDTH"
-     data-height="HEIGHT"
      data-chart-library="gauge"
      ></div>
 ```
