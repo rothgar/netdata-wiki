@@ -37,7 +37,7 @@ If you need to create a new dashboard on an empty page, we suggest the following
 
 ## Prerequisites
 
-To add netdata charts to a web page, you need to include the `/dashboard.js` file of a netdata server.
+To add netdata charts to any web page (dedicated to netdata or not), you need to include the `/dashboard.js` file of a netdata server.
 
 For example, if your netdata server listens at `http://box:19999/`, you will need to add the following to the `head` section of your web page:
 
