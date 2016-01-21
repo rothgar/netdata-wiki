@@ -25,6 +25,9 @@ If you need to create a new dashboard on an empty page, we suggest the following
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<!-- here we will add dashboard.js -->
+
 </head>
 <body>
 
@@ -110,4 +113,3 @@ If you need to set any other URL as the default netdata server for all charts th
 ```
 
 ## Adding charts
-
