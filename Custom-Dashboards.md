@@ -113,3 +113,74 @@ If you need to set any other URL as the default netdata server for all charts th
 ```
 
 ## Adding charts
+
+To add charts, you need to add a `div` for each of them. Each of these `div` elements accept a few `data-` attributes:
+
+### The chart unique ID
+
+The unique ID of a chart is shown at the title of the chart of the default netdata dashboard. You can also find all the charts available at your netdata server with this URL: `http://your.netdata.server:19999/api/v1/charts` ([example](http://netdata.firehol.org/api/v1/charts)).
+
+To specify the unique id, use this:
+
+```html
+<div data-netdata="unique.id"></div>
+```
+
+The above is enough for adding a chart. It most probably have the wrong visual settings though. Keep reading...
+
+### The duration of the chart
+
+You can specify the duration of the chart (how much time of data it will show) using:
+
+```html
+<div data-netdata="unique.id"
+     data-after="AFTER_SECONDS"
+     data-before="BEFORE_SECONDS"
+     ></div>
+```
+
+`AFTER_SECONDS` and `BEFORE_SECONDS` are numbers representing seconds.
+
+The can be either:
+
+- **absolute** unix timestamps (in javascript terms, they are `new Date().getTime() / 1000`, or
+
+- **relative** number of seconds to now, so to show the last 10 minutes of data, `AFTER_SECONDS` must be `-600` and `BEFORE_SECONDS` must be `0`. If you want the chart to autorefresh to current values, you need to specify **relative** values.
+
+### Chart dimensions
+
+You can set the dimensions of the chart using this:
+
+```html
+<div data-netdata="unique.id"
+     data-after="AFTER_SECONDS"
+     data-before="BEFORE_SECONDS"
+     data-width="WIDTH"
+     data-height="HEIGHT"
+     ></div>
+```
+
+`WIDTH` and `HEIGHT` can be anything CSS accepts for width and height (e.g. percentages, pixels, etc).
+Keep in mind that for certain chart libraries, `dashboard.js` may apply an aspect ratio to these.
+
+If you want `dashboard.js` to remember permanently (browser local storage) the dimensions of the chart (the user may resize them), you can add: `data-id="SETTINGS_ID"`, where `SETTINGS_ID` is anything that will be common for this chart across user sessions.
+
+### Netdata server
+
+Each chart can get data from a different netdata server. You can give per chart the netdata server using `data-host="http://another.netdata.server:19999/"`.
+
+
+### Chart library
+
+The default chart library is `dygraph`. You set a different chart library per chart using this:
+
+```html
+<div data-netdata="unique.id"
+     data-after="AFTER_SECONDS"
+     data-before="BEFORE_SECONDS"
+     data-width="WIDTH"
+     data-height="HEIGHT"
+     data-chart-library="gauge"
+     ></div>
+```
+
