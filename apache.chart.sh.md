@@ -113,3 +113,6 @@ For apache 2.2:
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/12530273/421c4d14-c1e2-11e5-9fb6-ca6d6dd3b1dd.png)
 
+For apache 2.4:
+
+![image](https://cloud.githubusercontent.com/assets/2662304/12530376/29ec26de-c1e6-11e5-9af1-e48aaf781795.png)
