@@ -26,10 +26,12 @@
 **BASH Plugins**
 * [[General Info - charts.d]]
 * [[ap.chart.sh]]
+* [[apache.chart.sh]]
 * [[cpufreq.chart.sh]]
 * [[example.chart.sh]]
 * [[mysql.chart.sh]]
 * [[nut.chart.sh]]
+* [[nginx.chart.sh]]
 * [[opensips.chart.sh]]
 * [[postfix.chart.sh]]
 * [[sensors.chart.sh]]
@@ -57,3 +59,9 @@
     - [[jQuery Sparkline]]
     - [[Peity]]
 * [[Custom Dashboards]]
+
+---
+
+**Advanced**
+* [[Running behind ngnix]]
+* [[Running behind apache]]
