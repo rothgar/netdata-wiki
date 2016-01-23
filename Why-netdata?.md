@@ -1,3 +1,19 @@
+# Why another monitoring tool?
+
+There are a lot of tools for collecting and visualizing performance metrics. Check for example [collectd](https://collectd.org/), [OpenTSDB](http://opentsdb.net/), [Cacti](http://www.cacti.net/) the many complete NMS systems that offer complete monitoring solutions ([Nagios](https://www.nagios.org/), [Zabbix](http://www.zabbix.com/), [OpenNMS](http://www.opennms.org/), etc.
+
+So, why netdata?
+
+Well, my need for netdata arose from the following facts:
+
+1. Take any other performance monitoring solution. At the end of the day you will have to login to the server to understand what exactly is happening. You will have to use `iostat`, `iotop`, `vmstat`, `top`, `mytop` and probably a few dozen more console tools to figure it out. With netdata, this need is eliminated significantly. If you use netdata you will prefer it over the console tools. Netdata visualizes the data, while the console tools just show them. The detail is the same (actually I have spent pretty much time reading the code of the console tools to figure out what I need to do in netdata, so that the data will be the same).
+
+2. Any performance monitoring solution that does not go down to per second collection and visualization of the data, I believe is useless. It will make you happy to have it, but it will not help you other than psychologically. Visualizing the present in real-time and in great detail, is the most important value a performance monitoring solution should provide. The next most important is the last hour. The next is the last 8 hours. The next is the last day and so on up to about the last 30 days (for me even this is too much). In my 20+ years in IT, I needed just once or twice to look a year back. And this was mainly out of curiosity.
+
+3. Over-complexity. Most solutions require from you endless configuration of whatever imaginable. This is too much. I run a mysql server here. Why should I need to configure every single metric the database server provides? Show them all! We should be able to install something, do a simple configuration to enable monitoring of the application as a whole and start monitoring it immediately.
+
+4. Most solutions require dedicated servers to actually use the monitoring console. This one really drives me mad. All of us have a spectacular tool on our desktops, that allows us to connect in real time to any server in the world: the web browser. It shouldn't be so hard to use the same tool to connect in real-time to all our servers! There is no need to centralize anything, to copy the data, aggregate them, or whatever. The data of the server is the data of the server. I don't need to copy the whole of opensource.com to view it. Why do I need to copy all my performance metrics to view them?
+
 # Netdata is unique!
 
 ## Per second data collection and visualization
