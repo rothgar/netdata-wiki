@@ -88,7 +88,7 @@ You can set:
 apache_url="http://127.0.0.1:80/server-status?auto"
 ```
 
-  - `ap_update_every=NUMBER` to , to give the data collection frequency.
+ - `ap_update_every=NUMBER` to , to give the data collection frequency.
 
 
 ## Auto-detection
