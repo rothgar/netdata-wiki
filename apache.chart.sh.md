@@ -97,6 +97,12 @@ If you have configured your apache server to offer server-status information on 
 
 ## Apache Configuration
 
-Apache configuration differs between distribution. Please check your distribution's documentation for information on enabling apache's `mod_status` module.
+Apache configuration differs between distributions. Please check your distribution's documentation for information on enabling apache's `mod_status` module.
 
-If you are able to run the `curl` command given at the beginning, netdata will be able to do it too.
+If you are able to run successfully, by hand this command:
+
+```sh
+curl "http://127.0.0.1:80/server-status?auto"
+```
+
+netdata will be able to do it too.
