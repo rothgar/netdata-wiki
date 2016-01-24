@@ -2,32 +2,36 @@
 
 Linux, non disruptive, real-time monitoring and visualization, in the greatest possible detail.
 
-[Click here for a live demo](http://netdata.firehol.org)
+[Click here for a live demo of **netdata**](http://netdata.firehol.org).
 
-An animated GIF showing netdata ability to monitor QoS:
+The following i an animated GIF showing **netdata**'s ability to monitor QoS:
 
 ![animation5](https://cloud.githubusercontent.com/assets/2662304/12373715/0da509d8-bc8b-11e5-85cf-39d5234bf976.gif)
 
 
 ### Why another monitoring tool?
 
-There are a lot of tools for collecting and visualizing performance metrics. Check for example [collectd](https://collectd.org/), [OpenTSDB](http://opentsdb.net/), [Cacti](http://www.cacti.net/), the many complete NMS systems that offer full monitoring solutions ([Nagios](https://www.nagios.org/), [Zabbix](http://www.zabbix.com/), [OpenNMS](http://www.opennms.org/), etc.
+There are a lot of open source tools for collecting and visualizing performance metrics. Check for example [collectd](https://collectd.org/), [OpenTSDB](http://opentsdb.net/), [Cacti](http://www.cacti.net/), the many complete NMS systems that offer full monitoring solutions ([Nagios](https://www.nagios.org/), [Zabbix](http://www.zabbix.com/), [OpenNMS](http://www.opennms.org/), etc. Also you can find a lot of open source and commercial solutions that can process and visualize large piles of data, including performance metrics.
 
 So, why **netdata**?
 
+Well, **netdata** has a different approach. Let's see these differences:
+
 ### The end of console for performance monitoring
 
-> Take any performance monitoring solution and try to troubleshoot a performance problem. At the end of the day you will have to login to the server to understand what exactly is happening. You will have to use `iostat`, `iotop`, `vmstat`, `top`, `iperf` and probably a few dozen more console tools to figure it out.
+> Take any performance monitoring solution and try to troubleshoot a performance problem. At the end of the day you will have to ssh to the server to understand what exactly is happening. You will have to use `iostat`, `iotop`, `vmstat`, `top`, `iperf` and probably a few dozen more console tools to figure it out.
 
-With **netdata**, this need is eliminated significantly. Of course you will login on the console. Just not for  monitoring performance!
+With **netdata**, this need is eliminated significantly. Of course you will ssh. Just not for monitoring performance!
 
-If you install **netdata** you will prefer it over the console tools. **Netdata** visualizes the data, while the console tools just show their values. The detail is the same - actually I have spent pretty much time reading the source code of the console tools, to figure out what I need to do in netdata, so that the data will be the same. **Netdata** visualizes these data in ways you cannot even imagine on the console. It allows you to see the present in real-time, much like the console tools, but also the recent past, compare different metrics with each other (past and present), zoom in to see the recent past in detail, or zoom out to have a helicopter view of what is happening in longer durations.
+If you install **netdata** you will prefer it over the console tools. **Netdata** visualizes the data, while the console tools just show their values. The detail is the same - actually I have spent pretty much time reading the source code of the console tools, to figure out what I need to do in netdata, so that the data, the values, will be the same. **Netdata** visualizes these data in ways you cannot even imagine on a console. It allows you to see the present in real-time, much like the console tools, but also the recent past, compare different metrics with each other (past and present), zoom in to see the recent past in detail, or zoom out to have a helicopter view of what is happening in longer durations, build custom dashboards with just the data you need for a specific purpose.
+
+Most engineers that install netdata, ssh to the server to tweak system or application settings and at the same time they monitor the result of the new settings in **netdata** on their browser.
 
 ### Real-time
 
 > Any performance monitoring solution that does not go down to per second collection and visualization of the data, is useless. It will make you happy to have it, but it will not help you more than that. 
 
-Visualizing the present in real-time and in great detail, is the most important value a performance monitoring solution should provide. The next most important is the last hour, again per second. The next is the last 8 hours. The next is the last day and so on, up to a week, or at most a month. In my 20+ years in IT, I needed just once or twice to look a year back. And this was mainly out of curiosity.
+Visualizing the present in **real-time and in great detail**, is the most important value a performance monitoring solution should provide. The next most important is the last hour, again per second. The next is the last 8 hours. The next is the last day and so on, up to a week, or at most a month. In my 20+ years in IT, I needed just once or twice to look a year back. And this was mainly out of curiosity.
 
 Of course real-time monitoring requires resources. This is why **netdata** is designed to be very efficient:
 
