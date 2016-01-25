@@ -26,3 +26,12 @@ To pass netdata through mod_proxy, use a config like this:
 
 The `RewriteRule` statements make sure the request has a trailing `/`. Without a trailing slash, the browser will be requesting wrong URLs.
 
+## Response compression
+
+If you plan to use netdata exclusively via apache, you can gain some performance by preventing double compression of its output (netdata compresses its response, apache re-compresses it) by editing `/etc/netdata/netdata.conf` and setting:
+
+```
+enable web responses gzip compression = no
+```
+
+Once you disable compression at netdata, please verify you receive compressed responses from apache.
