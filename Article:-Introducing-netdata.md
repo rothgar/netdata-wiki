@@ -19,7 +19,7 @@ Check the details on this animation:
 
 ### Why another monitoring tool?
 
-There are a lot of open source tools for collecting and visualizing performance metrics. Check for example [collectd](https://collectd.org/), [OpenTSDB](http://opentsdb.net/), [Cacti](http://www.cacti.net/), the many complete NMS systems that offer full monitoring solutions ([Nagios](https://www.nagios.org/), [Zabbix](http://www.zabbix.com/), [OpenNMS](http://www.opennms.org/), etc. Also you can find a lot of open source and commercial solutions that can process and visualize large piles of data, including performance metrics.
+There are a lot of excellent open source tools for collecting and visualizing performance metrics. Check for example [collectd](https://collectd.org/), [OpenTSDB](http://opentsdb.net/), [influxdb](https://influxdata.com/), [Grafana](http://grafana.org/), etc.
 
 So, why **netdata**?
 
@@ -37,7 +37,7 @@ If you install **netdata** you will prefer it over the console tools. **Netdata*
 
 Most engineers that install netdata, ssh to the server to tweak system or application settings and at the same time they monitor the result of the new settings in **netdata** on their browser.
 
-### Real-time
+### Real-time detail
 
 > Any performance monitoring solution that does not go down to per second collection and visualization of the data, is useless. It will make you happy to have it, but it will not help you more than that. 
 
