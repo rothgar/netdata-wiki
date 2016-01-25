@@ -1,6 +1,6 @@
 # Introducing netdata
 
-Linux, non disruptive, real-time monitoring and visualization, in the greatest possible detail.
+Linux, real-time performance monitoring, in the greatest possible detail!
 
 [Click here for a live demo of **netdata**](http://netdata.firehol.org).
 
