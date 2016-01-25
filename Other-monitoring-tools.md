@@ -17,9 +17,30 @@ Monit is a small Open Source utility for managing and monitoring Unix systems. M
 
 # Performance Monitoring
 
+## [Collectd](http://collectd.org/)
+
+collectd is a daemon which collects system performance statistics periodically and provides mechanisms to store the values in a variety of ways, for example in RRD files.
+
 ## [Cacti](http://www.cacti.net/)
 
 Cacti is a complete frontend to RRDTool, it stores all of the necessary information to create graphs and populate them with data in a MySQL database. The frontend is completely PHP driven. Along with being able to maintain Graphs, Data Sources, and Round Robin Archives in a database, cacti handles the data gathering. There is also SNMP support for those used to creating traffic graphs with MRTG.
+
+## [Facette](https://facette.io/)
+
+Time series data visualization and graphing software.
+
+## [Freeboard](http://freeboard.io/)
+
+Ridiculously simple dashboards for your devices.
+
+## [Ganglia](http://ganglia.sourceforge.net/)
+
+Ganglia is a scalable distributed monitoring system for high-performance computing systems such as clusters and Grids.
+
+## [Grafana](http://grafana.org/)
+
+The leading graph and dashboard builder for visualizing time series metrics.
+Grafana provides a powerful and elegant way to create, explore, and share dashboards and data with your team and the world. Grafana is most commonly used for visualizing time series data for Internet infrastructure and application analytics but many use it in other domains including industrial sensors, home automation, weather, and process control.
 
 ## [LinuxDash](http://linuxdash.afaqtariq.com/)
 
