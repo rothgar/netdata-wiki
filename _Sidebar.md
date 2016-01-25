@@ -1,6 +1,5 @@
 **General**
 * [[Home]]
-* [[Article: Introducing netdata]]
 * [[Why netdata?]]
 * [[Installation]]
 * [[Command Line Options]]
@@ -66,3 +65,9 @@
 **Advanced**
 * [[Running behind ngnix]]
 * [[Running behind apache]]
+
+---
+
+**More**
+* [[Article: Introducing netdata]]
+* [[Other monitoring tools]]
