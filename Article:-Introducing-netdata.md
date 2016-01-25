@@ -27,7 +27,7 @@ Well, **netdata** has a quite different approach:
 
 ### The end of console for performance monitoring
 
-> Take any performance monitoring solution and try to troubleshoot a performance problem. At the end of the day you will have to ssh to the server to understand what exactly is happening. You will have to use `iostat`, `iotop`, `vmstat`, `top`, `iperf` and probably a few dozen more console tools to figure it out.
+> Take any performance monitoring solution and try to troubleshoot a performance problem. At the end of the day you will have to ssh to the server to understand what exactly is happening. You will have to use `iostat`, `iotop`, `vmstat`, `top`, `iperf`, `ethtool` and probably a few dozen more console tools to figure it out.
 
 With **netdata**, this need is eliminated significantly. Of course you will ssh. Just not for monitoring performance.
 
@@ -52,25 +52,25 @@ Of course real-time monitoring requires resources. **netdata** is designed to be
 
 **Netdata** will use some CPU and memory, but it **will not produce any disk I/O at all**, apart its logs (which you can disable if you like).
 
-Most servers should have plenty of CPU resources (I consider a hardware upgrade or application split when a server averages around 40% CPU utilization at the peak hour). Even if a server has limited CPU resources available, you can just lower the data collection frequency of **netdata**. Going from per second to every 2 seconds data collection, will cut the **netdata** CPU (and memory) requirements in half and you will still get charts that are just 2 seconds behind.
+Most servers should have plenty of CPU resources (I consider a hardware upgrade or application split when a server averages around 40% CPU utilization at the peak hour). Even if a server has limited CPU resources available, you can just lower the data collection frequency of **netdata**. Going from per second to every 2 seconds data collection, will cut the **netdata** CPU requirements in half and you will still get charts that are just 2 seconds behind.
 
 The same goes for memory. If you just keep an hour of data (which is perfect for performance troubleshooting), you will most probably need 15-20MB. You can also enable the kernel de-duper (Kernel Same-Page Merging) and **netdata** will offer to it all its round robin database. KSM can free 20-60% of the memory used by **netdata** (guess why: there are a lot of metrics that are always zero or just constant).
 
 ### Simplicity
 
-> Most monitoring solutions require endless configuration of whatever imaginable. Well, this is a linux box. Why do I need to configure every single metric I need to monitor. Of course it has a CPU and RAM and a few disks, and ethernet ports, it might run a firewall, a web server, or a database server and so on. Why do we need to configure all these metrics? Show them all!
+> Most monitoring solutions require endless configuration of whatever imaginable. Well, this is a linux box. Why do we need to configure every single metric we need to monitor. Of course it has a CPU and RAM and a few disks, and ethernet ports, it might run a firewall, a web server, or a database server and so on. Why do we need to configure all these metrics?
 
-**Netdata** has been designed to auto-detect everything. Of course you can enable, tweak or disable things. But by default, if **netdata** can retrieve `/server-status` from an apache you run on your linux box, it will automatically collect all performance metrics. The same is true for squid, nginx, mysql, opensips, etc. It will also automatically collect all available system values for CPU, memory, disks, network interfaces, QoS (with labels if you also use [FireQOS](http://firehol.org)), etc. Even for applications that do not offer performance metrics, it will automatically group the whole process tree and provide metrics like CPU usage, memory allocated, opened files, sockets, disk activity, swap activity, etc per application group.
+**Netdata** has been designed to auto-detect everything. Of course you can enable, tweak or disable things. But by default, if **netdata** can retrieve `/server-status` from an web server you run on your linux box, it will automatically collect all performance metrics. This happens for apache, squid, nginx, mysql, opensips, etc. It will also automatically collect all available system values for CPU, memory, disks, network interfaces, QoS (with labels if you also use [FireQOS](http://firehol.org)), etc. Even for applications that do not offer performance metrics, it will automatically group the whole process tree and provide metrics like CPU usage, memory allocated, opened files, sockets, disk activity, swap activity, etc per application group.
 
 ### Monitoring console
 
-> Most solutions require dedicated servers to actually use the monitoring console. To my perspective, this is totally wrong! All of us have a spectacular tool on our desktops, that allows us to connect in real time to any server in the world: **the web browser**. It shouldn't be so hard to use the same tool to connect in real-time to all our servers.
+> Most solutions require dedicated servers to actually use the monitoring console. To my perspective, this is totally unneeded for performance monitoring. All of us have a spectacular tool on our desktops, that allows us to connect in real time to any server in the world: **the web browser**. It shouldn't be so hard to use the same tool to connect in real-time to all our servers.
 
-With **netdata**, there is no need to centralize anything, no need to copy the data or aggregate them somewhere. The data of the server are data on the server. You view them directly from their source.
+With **netdata**, there is no need to centralize anything for performance monitoring. You view everything directly from their source.
 
-Of course, with **netdata** you can build dashboards with charts from any number of servers. And these charts will be connected to each other much like the ones that come from the same server. You will hover on one and all of them will show the relative value for the selected timestamp. You will zoom or pan one and all of them will follow. **Netdata** achieves that because the logic that connects the charts together is at the browser, not the server, so that all charts presented on the same page are connected, no matter where they come from.
+Still, with **netdata** you can build dashboards with charts from any number of servers. And these charts will be connected to each other much like the ones that come from the same server. You will hover on one and all of them will show the relative value for the selected timestamp. You will zoom or pan one and all of them will follow. **Netdata** achieves that because the logic that connects the charts together is at the browser, not the server, so that all charts presented on the same page are connected, no matter where they come from.
 
-The charting libraries **netdata** uses, are the fastest possible ([Dygraphs](http://dygraphs.com/) do make the difference!). **Netdata** respects browser resources. Data are just rendered on a canvas. No processing in javascript at all.
+The charting libraries **netdata** uses, are the fastest possible ([Dygraphs](http://dygraphs.com/) do make the difference!) and **netdata** respects browser resources. Data are just rendered on a canvas. No processing in javascript at all.
 
 Server side, chart data generation scales pretty well. You can expect 400+ chart refreshes per second per core on modern hardware. For a page with 10 charts visible (the page may have hundreds, but only the visible are refreshed), just a tiny fraction of a single CPU core will be used for servicing them. Even these refreshes stop when you switch tabs on your browser, you focus on another window, scroll to a part of the page without charts, zoom or pan a chart. And of course the **netdata** server runs with the lowest possible process priority, so that your production environment, your applications, will not be slowed down by the netdata server.
 
