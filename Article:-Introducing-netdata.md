@@ -4,7 +4,7 @@ Linux, real-time performance monitoring, in the greatest possible detail!
 
 [Click here for a live demo of **netdata**](http://netdata.firehol.org).
 
-The following i an animated GIF showing **netdata**'s ability to monitor QoS. The timings of this animation have not been altered, this is the real thing:
+The following is an animated GIF showing **netdata**'s ability to monitor QoS. The timings of this animation have not been altered, this is the real thing:
 
 ![animation5](https://cloud.githubusercontent.com/assets/2662304/12373715/0da509d8-bc8b-11e5-85cf-39d5234bf976.gif)
 
