@@ -141,4 +141,4 @@ This is what you need to do:
 2. Create/edit the files `/etc/netdata/charts.d.conf` and `/etc/netdata/charts2.d.conf` and set enable / disable the collector you want each to run. Remember to set `enable_all_charts="no"` to both of them, and enable the individual collectors for each.
 3. link `/usr/libexec/netdata/plugins.d/charts.d.plugin` to `/usr/libexec/netdata/plugins.d/charts2.d.plugin`. Netdata will spawn a new charts.d process.
 
-Do them in this order, since netdata will (by default) attempt to start new plugins soon after they are created in `/usr/libexec/netdata`.
+Do them in this order, since netdata will (by default) attempt to start new plugins soon after they are created in `/usr/libexec/netdata/plugins.d/`.
