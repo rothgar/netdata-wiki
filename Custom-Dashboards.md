@@ -72,7 +72,7 @@ For example, if your netdata server listens at `http://box:19999/`, you will nee
 
 6. `font-awesome.min.css`, for icons.
 
-When `dashboard.js` loads will scan the page for elements that define charts (see below) and immediately start refreshing them.
+When `dashboard.js` loads will scan the page for elements that define charts (see below) and immediately start refreshing them. Keep in mind more javascript modules may be loaded (every chart library is a different javascript file, that is loaded on first use).
 
 ### Prevent dashboard.js from starting chart refreshes
 
