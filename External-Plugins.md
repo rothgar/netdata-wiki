@@ -71,7 +71,7 @@ the template is:
 
   - `name`
 
-    is the name that will be presented to the user instead of `id` in `type.id`. This means that only the `id` part of `type.id` is changed. When a name has been given, the chart is index (and can be referred) as both `type.id` and `type.name`. You can set this `''` or `null` or `(null)` to disable this.
+    is the name that will be presented to the user instead of `id` in `type.id`. This means that only the `id` part of `type.id` is changed. When a name has been given, the chart is index (and can be referred) as both `type.id` and `type.name`. You can set name to `''`, or `null`, or `(null)` to disable it.
 
   - `title`
 
