@@ -71,7 +71,7 @@ the template is:
 
   - `name`
 
-    is the name that will be presented to the used for this chart
+    is the name that will be presented to the user instead of `id` in `type.id`. This means that only the `id` part of `type.id` is changed. When a name has been given, the chart can be referred either as either `type.id` or `type.name`.
 
   - `title`
 
