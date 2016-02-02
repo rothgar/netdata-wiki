@@ -6,7 +6,7 @@ Using this netdata collector, you can monitor one or more ISC Bind servers.
 
 The plugin will execute (from within node.js) the equivalent of:
 
-```
+```sh
 curl "http://localhost:8888/json/v1/server"
 ```
 
