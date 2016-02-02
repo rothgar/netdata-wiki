@@ -38,7 +38,7 @@
 * [[squid.chart.sh]]
 
 **Node.js Plugins**
-* [[General Info - charts.d]]
+* [[General Info - node.d]]
 * [[named.node.js]]
 * [[sma_webbox.node.js]]
 
