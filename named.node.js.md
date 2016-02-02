@@ -289,3 +289,4 @@ Depending on the number of views your bind has, you may get a large number of ch
 Here is an example of the top few charts:
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/12765473/879b8e04-ca07-11e5-817d-b0651996c42b.png)
+![image](https://cloud.githubusercontent.com/assets/2662304/12766538/12b272fa-ca0d-11e5-81e1-6a9f8ff488ff.png)
