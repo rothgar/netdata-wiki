@@ -7,24 +7,24 @@ Using this netdata collector, you can monitor one or more ISC Bind servers.
 The plugin will execute (from within node.js) the equivalent of:
 
 ```
-curl "http://localhost:8888/json/v1"
+curl "http://localhost:8888/json/v1/server"
 ```
 
-Normally, this produces a very long output. Here is a sample of it:
+Here is a sample of it:
 
 ```
 {
   "json-stats-version":"1.0",
   "boot-time":"2016-01-31T08:20:48Z",
   "config-time":"2016-01-31T09:28:03Z",
-  "current-time":"2016-02-02T21:35:38Z",
+  "current-time":"2016-02-02T22:22:20Z",
   "opcodes":{
-    "QUERY":244263,
+    "QUERY":247816,
     "IQUERY":0,
     "STATUS":0,
     "RESERVED3":0,
     "NOTIFY":0,
-    "UPDATE":3770,
+    "UPDATE":3813,
     "RESERVED6":0,
     "RESERVED7":0,
     "RESERVED8":0,
@@ -37,59 +37,183 @@ Normally, this produces a very long output. Here is a sample of it:
     "RESERVED15":0
   },
   "qtypes":{
-    "A":88094,
-    "NS":852,
+    "A":89519,
+    "NS":863,
     "CNAME":1,
     "SOA":1,
-    "PTR":115124,
-    "MX":273,
+    "PTR":116779,
+    "MX":276,
     "TXT":198,
-    "AAAA":38865,
+    "AAAA":39324,
     "SRV":850,
     "ANY":5
   },
   "nsstats":{
-    "Requestv4":248034,
-    "ReqEdns0":1245,
-    "ReqTSIG":3770,
+    "Requestv4":251630,
+    "ReqEdns0":1255,
+    "ReqTSIG":3813,
     "ReqTCP":57,
-    "AuthQryRej":1438,
+    "AuthQryRej":1455,
     "RecQryRej":122,
-    "Response":242504,
+    "Response":245918,
     "TruncatedResp":44,
-    "RespEDNS0":1245,
-    "RespTSIG":3770,
-    "QrySuccess":202211,
-    "QryAuthAns":117833,
-    "QryNoauthAns":119082,
-    "QryNxrrset":32332,
-    "QrySERVFAIL":258,
-    "QryNXDOMAIN":2372,
-    "QryRecursion":40019,
-    "QryDuplicate":5530,
-    "QryFailure":1560,
-    "UpdateDone":2488,
-    "UpdateFail":1282,
-    "UpdateBadPrereq":1261,
-    "QryUDP":242658,
+    "RespEDNS0":1255,
+    "RespTSIG":3813,
+    "QrySuccess":205159,
+    "QryAuthAns":119495,
+    "QryNoauthAns":120770,
+    "QryNxrrset":32711,
+    "QrySERVFAIL":262,
+    "QryNXDOMAIN":2395,
+    "QryRecursion":40885,
+    "QryDuplicate":5712,
+    "QryFailure":1577,
+    "UpdateDone":2514,
+    "UpdateFail":1299,
+    "UpdateBadPrereq":1276,
+    "QryUDP":246194,
     "QryTCP":45,
-    "OtherOpt":100
+    "OtherOpt":101
   },
   "views":{
     "local":{
-      "zones":[
-        {
-          "name":"0.IN-ADDR.ARPA",
-          "class":"IN",
-          "serial":0
+      "resolver":{
+        "stats":{
+          "Queryv4":74577,
+          "Responsev4":67032,
+          "NXDOMAIN":601,
+          "SERVFAIL":5,
+          "FORMERR":7,
+          "EDNS0Fail":7,
+          "Truncated":3071,
+          "Lame":4,
+          "Retry":11826,
+          "QueryTimeout":1838,
+          "GlueFetchv4":6864,
+          "GlueFetchv4Fail":30,
+          "QryRTT10":112,
+          "QryRTT100":42900,
+          "QryRTT500":23275,
+          "QryRTT800":534,
+          "QryRTT1600":97,
+          "QryRTT1600+":20,
+          "BucketSize":31,
+          "REFUSED":13
         },
-        {
-          "name":"10.IN-ADDR.ARPA",
-          "class":"IN",
-          "serial":0
+        "qtypes":{
+          "A":64931,
+          "NS":870,
+          "CNAME":185,
+          "PTR":5,
+          "MX":49,
+          "TXT":149,
+          "AAAA":7972,
+          "SRV":416
         },
-
-...
+        "cache":{
+          "A":40356,
+          "NS":8032,
+          "CNAME":14477,
+          "PTR":2,
+          "MX":21,
+          "TXT":32,
+          "AAAA":3301,
+          "SRV":94,
+          "DS":237,
+          "RRSIG":2301,
+          "NSEC":126,
+          "!A":52,
+          "!NS":4,
+          "!TXT":1,
+          "!AAAA":3797,
+          "!SRV":9,
+          "NXDOMAIN":590
+        },
+        "cachestats":{
+          "CacheHits":1085188,
+          "CacheMisses":109,
+          "QueryHits":464755,
+          "QueryMisses":55624,
+          "DeleteLRU":0,
+          "DeleteTTL":42615,
+          "CacheNodes":5188,
+          "CacheBuckets":2079,
+          "TreeMemTotal":2326026,
+          "TreeMemInUse":1508075,
+          "HeapMemMax":132096,
+          "HeapMemTotal":393216,
+          "HeapMemInUse":132096
+        },
+        "adb":{
+          "nentries":1021,
+          "entriescnt":3157,
+          "nnames":1021,
+          "namescnt":3022
+        }
+      }
+    },
+    "public":{
+      "resolver":{
+        "stats":{
+          "BucketSize":31
+        },
+        "qtypes":{
+        },
+        "cache":{
+        },
+        "cachestats":{
+          "CacheHits":0,
+          "CacheMisses":0,
+          "QueryHits":0,
+          "QueryMisses":0,
+          "DeleteLRU":0,
+          "DeleteTTL":0,
+          "CacheNodes":0,
+          "CacheBuckets":64,
+          "TreeMemTotal":287392,
+          "TreeMemInUse":29608,
+          "HeapMemMax":1024,
+          "HeapMemTotal":262144,
+          "HeapMemInUse":1024
+        },
+        "adb":{
+          "nentries":1021,
+          "nnames":1021
+        }
+      }
+    },
+    "_bind":{
+      "resolver":{
+        "stats":{
+          "BucketSize":31
+        },
+        "qtypes":{
+        },
+        "cache":{
+        },
+        "cachestats":{
+          "CacheHits":0,
+          "CacheMisses":0,
+          "QueryHits":0,
+          "QueryMisses":0,
+          "DeleteLRU":0,
+          "DeleteTTL":0,
+          "CacheNodes":0,
+          "CacheBuckets":64,
+          "TreeMemTotal":287392,
+          "TreeMemInUse":29608,
+          "HeapMemMax":1024,
+          "HeapMemTotal":262144,
+          "HeapMemInUse":1024
+        },
+        "adb":{
+          "nentries":1021,
+          "nnames":1021
+        }
+      }
+    }
+  }
+}
 ```
 
 
@@ -106,7 +230,7 @@ From this output it collects:
 - Other Global Server Statistics
 - Global Incoming Requests by OpCode
 - Global Incoming Requests by Query Type
-- Global Socket Statistics
+- Global Socket Statistics (will only work if the url is `http://127.0.0.1:8888/json/v1`, i.e. without `/server`, but keep in mind this produces a very long output and probably will account for 0.5% CPU overheads alone)
 - Per View Statistics (the following set will be added for each bind view):
    - View, Resolver Active Queries
    - View, Resolver Statistics
@@ -124,12 +248,12 @@ The collector reads the configuration file `/etc/netdata/named.conf` with the fo
 	"servers": [
 		{
 			"name": "bind1",
-			"url": "http://127.0.0.1:8888/json/v1",
+			"url": "http://127.0.0.1:8888/json/v1/server",
 			"update_every": 1
 		},
 		{
 			"name": "bind2",
-			"url": "http://10.1.2.3:8888/json/v1",
+			"url": "http://10.1.2.3:8888/json/v1/server",
 			"update_every": 2
 		}
 	]
@@ -165,4 +289,3 @@ Depending on the number of views your bind has, you may get a large number of ch
 Here is an example of the top few charts:
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/12765473/879b8e04-ca07-11e5-817d-b0651996c42b.png)
-
