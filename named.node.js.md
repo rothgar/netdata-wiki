@@ -230,7 +230,7 @@ From this output it collects:
 - Other Global Server Statistics
 - Global Incoming Requests by OpCode
 - Global Incoming Requests by Query Type
-- Global Socket Statistics (will only work if the url is `http://127.0.0.1:8888/json/v1`, i.e. without `/server`, but keep in mind this produces a very long output and probably will account for 0.5% CPU overheads alone)
+- Global Socket Statistics (will only work if the url is `http://127.0.0.1:8888/json/v1`, i.e. without `/server`, but keep in mind this produces a very long output and probably will account for 0.5% CPU overhead alone, per bind server added)
 - Per View Statistics (the following set will be added for each bind view):
    - View, Resolver Active Queries
    - View, Resolver Statistics
