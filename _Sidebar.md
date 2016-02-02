@@ -23,6 +23,11 @@
 **Binary Plugins**
 * [[Apps Plugin]]
 
+**Node.js Plugins**
+* [[General Info - node.d]]
+* [[named.node.js]]
+* [[sma_webbox.node.js]]
+
 **BASH Plugins**
 * [[General Info - charts.d]]
 * [[ap.chart.sh]]
@@ -36,13 +41,6 @@
 * [[postfix.chart.sh]]
 * [[sensors.chart.sh]]
 * [[squid.chart.sh]]
-
-**Node.js Plugins**
-* [[General Info - node.d]]
-* [[named.node.js]]
-* [[sma_webbox.node.js]]
-
-**Java Plugins**
 
 ---
 
