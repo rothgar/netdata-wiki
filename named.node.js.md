@@ -10,7 +10,7 @@ The plugin will execute (from within node.js) the equivalent of:
 curl "http://localhost:8888/json/v1/server"
 ```
 
-Here is a sample of it:
+Here is a sample of the output this command produces.
 
 ```js
 {
@@ -282,6 +282,13 @@ statistics-channels {
 ```
 
 (use the IPv4 or IPv6 line depending on what you are using, you can also use both)
+
+Verify it works with this:
+
+```sh
+curl "http://localhost:8888/json/v1/server"
+```
+
 
 ## Example netdata charts
 
