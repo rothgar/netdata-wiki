@@ -12,7 +12,7 @@ curl "http://localhost:8888/json/v1/server"
 
 Here is a sample of it:
 
-```
+```js
 {
   "json-stats-version":"1.0",
   "boot-time":"2016-01-31T08:20:48Z",
