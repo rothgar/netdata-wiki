@@ -283,7 +283,7 @@ statistics-channels {
 
 (use the IPv4 or IPv6 line depending on what you are using, you can also use both)
 
-Verify it works with this:
+Verify it works by running the following command (the collector is written in node.js and will query your bind server directly, but if this command works, the collector should be able to work too):
 
 ```sh
 curl "http://localhost:8888/json/v1/server"
