@@ -264,7 +264,9 @@ You can add any number of bind servers.
 
 ### XML instead of JSON, from bind
 
-The collector can also accept bind URLs that return XML output, using a URL like this:
+The collector can also accept bind URLs that return XML output. This might required if you cannot have bind 9.10+ but you have an old 9.x version installed.
+
+In such cases, use a URL like this:
 
 ```sh
 curl "http://box:8888/xml/v3/server"
@@ -275,14 +277,14 @@ Only `xml` and `v3` has been tested.
 Keep in mind though, that XML parsing is done using javascript code, which requires a triple conversion:
 
 1. from XML to JSON using a javascript XML parser (**CPU intensive**),
-2. which is then transformed to emulate the output of the JSON output of bind (**CPU intensive** - and yes the converted from XML object is different to the JSON native one),
+2. which is then transformed to emulate the output of the JSON output of bind (**CPU intensive** - and yes the converted JSON from XML is different to the native JSON - even bind produces different names for various attributes),
 3. which is then processed to generate the data for the charts (this will happen even if bind is producing JSON).
 
-In general, expect XML parsing to be 2 to 4 times more CPU intensive than JSON.
+In general, expect XML parsing to be 2 to 3 times more CPU intensive than JSON.
 
 **So, if you can use the JSON output of bind, prefer it over XML.**. Keep also in mind is generally more *expensive* than JSON (more CPU for bind too).
 
-Also, XML output is not autodetected.
+The XML interface of bind is not autodetected.
 You will have to provide the config file `/etc/netdata/named.conf`, like this:
 
 ```js
@@ -298,6 +300,8 @@ You will have to provide the config file `/etc/netdata/named.conf`, like this:
 	]
 }
 ```
+
+Of course, you can monitor more than one bind servers. Each one provide either JSON or XML output.
 
 ## Auto-detection
 
