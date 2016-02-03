@@ -266,8 +266,8 @@ You can add any number of bind servers.
 
 The collector can also accept bind URLs that return XML output, in this format:
 
-```
-http://box:8888/xml/v3/server
+```sh
+curl http://box:8888/xml/v3/server
 ```
 
 Only `xml` and `v3` has been tested.
