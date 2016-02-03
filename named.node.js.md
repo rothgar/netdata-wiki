@@ -305,7 +305,7 @@ Of course, you can monitor more than one bind servers. Each one provide either J
 
 ## Auto-detection
 
-Auto-detection is controlled by `enable_autodetect` in the config file. The default is enabled, so that if the collector can connect to `http://localhost:8888/json/v1` to receive bind statistics, it will automatically enable it.
+Auto-detection is controlled by `enable_autodetect` in the config file. The default is enabled, so that if the collector can connect to `http://localhost:8888/json/v1/server` to receive bind statistics, it will automatically enable it.
 
 ## Bind configuration
 
