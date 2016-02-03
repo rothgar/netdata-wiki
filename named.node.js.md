@@ -278,6 +278,8 @@ Keep in mind though, that XML parsing is done using javascript code, which requi
 2. which is then transformed to emulate the output of the JSON output of bind (**CPU intensive** - and yes the converted from XML object is different to the JSON native one),
 3. which is then processed to generate the data for the charts (this will happen even if bind is producing JSON).
 
+In general, expect XML parsing to be 2 to 4 times more CPU intensive than JSON.
+
 **So, if you can use the JSON output of bind, prefer it over XML.**. Keep also in mind is generally more *expensive* than JSON (more CPU for bind too).
 
 Also, XML output is not autodetected.
