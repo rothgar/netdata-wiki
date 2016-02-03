@@ -274,11 +274,11 @@ Only `xml` and `v3` has been tested.
 
 Keep in mind though, that XML parsing is done using javascript code, which requires a triple conversion:
 
-1. from XML to JSON using a javascript XML parser,
-2. which is then transformed to emulate the output of the JSON output of bind (yes they are different),
-3. which is then processed to generate the data for the charts.
+1. from XML to JSON using a javascript XML parser (**CPU intensive**),
+2. which is then transformed to emulate the output of the JSON output of bind (**CPU intensive** - and yes the converted from XML object is different to the JSON native one),
+3. which is then processed to generate the data for the charts (this will happen even if bind is producing JSON).
 
-**So, if you can use the JSON output of bind, prefer it.**.
+**So, if you can use the JSON output of bind, prefer it over XML.**. Keep also in mind is generally more *expensive* than JSON (more CPU for bind too).
 
 Also, XML output is not autodetected.
 You will have to provide the config file `/etc/netdata/named.conf`, like this:
