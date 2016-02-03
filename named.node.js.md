@@ -301,7 +301,7 @@ You will have to provide the config file `/etc/netdata/named.conf`, like this:
 }
 ```
 
-Of course, you can monitor more than one bind servers. Each one provide either JSON or XML output.
+Of course, you can monitor more than one bind servers. Each one can be configured with either JSON or XML output.
 
 ## Auto-detection
 
