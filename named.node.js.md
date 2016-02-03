@@ -269,7 +269,7 @@ The collector can also accept bind URLs that return XML output. This might requi
 In such cases, use a URL like this:
 
 ```sh
-curl "http://box:8888/xml/v3/server"
+curl "http://localhost:8888/xml/v3/server"
 ```
 
 Only `xml` and `v3` has been tested.
