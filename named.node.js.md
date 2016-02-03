@@ -239,7 +239,7 @@ From this output it collects:
 
 ## Configuration
 
-The collector reads the configuration file `/etc/netdata/named.conf` with the following contents:
+The collector (optionally) reads a configuration file named `/etc/netdata/named.conf`, with the following contents:
 
 ```js
 {
@@ -261,6 +261,8 @@ The collector reads the configuration file `/etc/netdata/named.conf` with the fo
 ```
 
 You can add any number of bind servers.
+
+If the configuration file is missing, or the key `enable_autodetect` is `true`, the collector will also attempt to fetch `http://localhost:8888/json/v1/server` which, if successful will be added too.
 
 ### XML instead of JSON, from bind
 
