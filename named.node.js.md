@@ -262,7 +262,7 @@ The collector reads the configuration file `/etc/netdata/named.conf` with the fo
 
 You can add any number of bind servers.
 
-### XML from bind
+### XML instead of JSON, from bind
 
 The collector can also accept bind URLs that return XML output, in this format:
 
