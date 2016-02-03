@@ -262,9 +262,44 @@ The collector reads the configuration file `/etc/netdata/named.conf` with the fo
 
 You can add any number of bind servers.
 
+### XML from bind
+
+The collector can also accept bind URLs that return XML output, in this format:
+
+```
+http://box:8888/xml/v3/server
+```
+
+Only `xml` and `v3` has been tested.
+
+Keep in mind though, that XML parsing is done using javascript code, which requires a triple conversion:
+
+1. from XML to JSON using a javascript XML parser,
+2. which is then transformed to emulate the output of the JSON output of bind (yes they are different),
+3. which is then processed to generate the data for the charts.
+
+**So, if you can use the JSON output of bind, prefer it.**.
+
+Also, XML output is not autodetected.
+You will have to provide the config file `/etc/netdata/named.conf`, like this:
+
+```js
+{
+	"enable_autodetect": false,
+	"update_every": 1,
+	"servers": [
+		{
+			"name": "local",
+			"url": "http://localhost:8888/xml/v3/server",
+			"update_every": 1
+		}
+	]
+}
+```
+
 ## Auto-detection
 
-Auto-detection is controlled by `enable_autodetect` in the config file. The default is enabled, so that if the collector can connect to `http://127.0.0.1:8888/json/v1` to receive bind statistics, it will automatically enable it.
+Auto-detection is controlled by `enable_autodetect` in the config file. The default is enabled, so that if the collector can connect to `http://localhost:8888/json/v1` to receive bind statistics, it will automatically enable it.
 
 ## Bind configuration
 
