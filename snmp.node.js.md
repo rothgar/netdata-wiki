@@ -2,7 +2,12 @@
 
 Using this collector, netdata can collect data from any SNMP device.
 
-Any number of SNMP devices, with any number of charts having any number of dimensions can be defined. Each device may also have a different update frequency.
+This collector supports:
+
+- any number of SNMP devices
+- each SNMP device can be used to collect data for any number of charts
+- each chart may have any number of dimensions
+- each SNMP device may have a different update frequency
 
 The source code of the plugin is [here](https://github.com/firehol/netdata/blob/master/node.d/snmp.node.js).
 
