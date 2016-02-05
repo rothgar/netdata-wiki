@@ -142,10 +142,10 @@ The `options` given for each server, are:
 To test it, you can run:
 
 ```sh
-/usr/libexec/netdata/plugins.d/node.d.plugin 1 snmp debug
+/usr/libexec/netdata/plugins.d/node.d.plugin 1 snmp
 ```
 
-The above will run it on your console and you will be able to see very detailed information about each step. To have the output netdata needs omit the `debug` option.
+The above will run it on your console and you will be able to see what netdata sees, but also errors. You can get a very detailed output by appending `debug` to the command line.
 
 ## Speed
 
