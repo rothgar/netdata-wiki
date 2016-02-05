@@ -147,9 +147,11 @@ To test it, you can run:
 
 The above will run it on your console and you will be able to see what netdata sees, but also errors. You can get a very detailed output by appending `debug` to the command line.
 
-## Speed
+If it works, restart netdata to active the snmp collector and refresh the dashboard.
 
-Keep in mind that many SNMP switches are routers are very slow. They many not be able to report values per second. If you run `node.d.plugin` in `debug` mode, it will report the time it took the SNMP device to respond. My switch, for example, needs 7-8 seconds to respond for the traffic on 24 ports (48 OIDs, in/out).
+## Data collection speed
+
+Keep in mind that many SNMP switches are routers are very slow. They may not be able to report values per second. If you run `node.d.plugin` in `debug` mode, it will report the time it took for the SNMP device to respond. My switch, for example, needs 7-8 seconds to respond for the traffic on 24 ports (48 OIDs, in/out).
 
 Also, if you use many SNMP clients on the same SNMP device at the same time, values may be skipped. This is a problem of the SNMP device, not this collector.
 
