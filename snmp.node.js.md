@@ -147,7 +147,7 @@ To test it, you can run:
 
 The above will run it on your console and you will be able to see what netdata sees, but also errors. You can get a very detailed output by appending `debug` to the command line.
 
-If it works, restart netdata to activate the snmp collector and refresh the dashboard.
+If it works, restart netdata to activate the snmp collector and refresh the dashboard (if your SNMP device responds with a delay, you may need to refresh the dashboard in a few seconds).
 
 ## Data collection speed
 
