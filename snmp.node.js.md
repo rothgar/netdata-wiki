@@ -83,7 +83,7 @@ Each of the 24 new charts will have its id (1-24) appended at:
 1. its chart unique id, i.e. `snmp_switch.bandwidth_port1` to `snmp_switch.bandwidth_port24`
 2. its `title`, i.e. `Switch Bandwidth for port 1` to `Switch Bandwidth for port 24`
 3. its `oid` (for all dimensions), i.e. dimension `in` will be `1.3.6.1.2.1.2.2.1.10.1` to `1.3.6.1.2.1.2.2.1.10.24`
-3. its priority (which will be incremented for each chart)
+3. its priority (which will be incremented for each chart so that the charts will appear on the dashboard in this order)
 
 ```js
 {
