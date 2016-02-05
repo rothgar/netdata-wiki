@@ -27,6 +27,7 @@
 * [[General Info - node.d]]
 * [[named.node.js]]
 * [[sma_webbox.node.js]]
+* [[snmp.node.js]]
 
 **BASH Plugins**
 * [[General Info - charts.d]]
