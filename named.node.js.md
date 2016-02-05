@@ -2,6 +2,14 @@
 
 Using this netdata collector, you can monitor one or more ISC Bind servers.
 
+## Example netdata charts
+
+Depending on the number of views your bind has, you may get a large number of charts.
+Here this is with just one view:
+
+![image](https://cloud.githubusercontent.com/assets/2662304/12765473/879b8e04-ca07-11e5-817d-b0651996c42b.png)
+![image](https://cloud.githubusercontent.com/assets/2662304/12766538/12b272fa-ca0d-11e5-81e1-6a9f8ff488ff.png)
+
 ## How it works
 
 The plugin will execute (from within node.js) the equivalent of:
@@ -309,7 +317,7 @@ Of course, you can monitor more than one bind servers. Each one can be configure
 
 Auto-detection is controlled by `enable_autodetect` in the config file. The default is enabled, so that if the collector can connect to `http://localhost:8888/json/v1/server` to receive bind statistics, it will automatically enable it.
 
-## Bind configuration
+## Bind (named) configuration
 
 To use this plugin, you have to have bind v9.10+ properly compiled to provide statistics in `JSON` format.
 
@@ -332,11 +340,3 @@ Verify it works by running the following command (the collector is written in no
 curl "http://localhost:8888/json/v1/server"
 ```
 
-
-## Example netdata charts
-
-Depending on the number of views your bind has, you may get a large number of charts.
-Here this is with just one view:
-
-![image](https://cloud.githubusercontent.com/assets/2662304/12765473/879b8e04-ca07-11e5-817d-b0651996c42b.png)
-![image](https://cloud.githubusercontent.com/assets/2662304/12766538/12b272fa-ca0d-11e5-81e1-6a9f8ff488ff.png)
