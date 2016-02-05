@@ -123,6 +123,15 @@ Each of the 24 new charts will have its id (1-24) appended at:
 }
 ```
 
+The `options` given for each server, are:
+
+ - `timeout`, the time to wait for the SNMP device to respond. The default is 5000 ms.
+ - `version`, the SNMP version to use. `0` is Version 1, `1` is Version 2c. The default is Version 1 (`0`).
+ - `transport`, the default is `udp4`.
+ - `port`, the port of the SNMP device to connect to. The default is `161`.
+ - `retries`, the number of attempts to make to fetch the data. The default is `1`.
+
+
 ## Testing the configuration
 
 To test it, you can run:
@@ -132,3 +141,26 @@ To test it, you can run:
 ```
 
 The above will run it on your console and you will be able to see very detailed information about each step. To have the output netdata needs omit the `debug` option.
+
+## Speed
+
+Keep in mind that many SNMP switches are routers are very slow. They many not be able to report values per second. If you run `node.d.plugin` in `debug` mode, it will report the time it took the SNMP device to respond. My switch, for example, needs 7-8 seconds to respond for the traffic on 24 ports (48 OIDs, in/out).
+
+Also, if you use many SNMP clients on the same SNMP device at the same time, values may be skipped. This is a problem of the SNMP device, not this collector.
+
+## Finding OIDs
+
+Use `snmpwalk`, like this:
+
+```sh
+snmpwalk -t 20 -v 1 -O n -c public 10.11.12.8
+```
+
+- `-t 20` is the timeout in seconds
+- `-v 1` is the SNMP version
+- `-O n` will display OIDs in numeric format
+- `-c public` is the SNMP community
+- `10.11.12.8` is the SNMP device
+
+Keep in mind that `snmpwalk` outputs the OIDs with a dot in front them. You should remove this dot when adding OIDs to the configuration file of this collector.
+
