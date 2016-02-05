@@ -158,12 +158,12 @@ Also, if you use many SNMP clients on the same SNMP device at the same time, val
 Use `snmpwalk`, like this:
 
 ```sh
-snmpwalk -t 20 -v 1 -O n -c public 10.11.12.8
+snmpwalk -t 20 -v 1 -O fn -c public 10.11.12.8
 ```
 
 - `-t 20` is the timeout in seconds
 - `-v 1` is the SNMP version
-- `-O n` will display OIDs in numeric format
+- `-O fn` will display full OIDs in numeric format (you may want to run it also without this option to see human readable output of OIDs)
 - `-c public` is the SNMP community
 - `10.11.12.8` is the SNMP device
 
