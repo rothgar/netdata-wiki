@@ -4,6 +4,12 @@ The `ap` collector visualizes data related to access points.
 
 The source code is [here](https://github.com/firehol/netdata/blob/master/charts.d/ap.chart.sh).
 
+## Example netdata charts
+
+![image](https://cloud.githubusercontent.com/assets/2662304/12377654/9f566e88-bd2d-11e5-855a-e0ba96b8fd98.png)
+
+## How it works
+
 It does the following:
 
 1. Runs `iw dev` searching for interfaces that have `type AP`.
@@ -70,14 +76,9 @@ Station 40:b8:37:5a:ed:5e (on wlan0)
    - Average Signal among all clients
    - Average Bitrate (including average expected throughput) among all clients
 
-   Example:
-
-   ![image](https://cloud.githubusercontent.com/assets/2662304/12377654/9f566e88-bd2d-11e5-855a-e0ba96b8fd98.png)
-
 ## Configuration
 
 You can only set `ap_update_every=NUMBER` to `/etc/netdata/ap.conf`, to give the data collection frequency.
-
 
 ## Auto-detection
 
