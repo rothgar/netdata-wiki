@@ -60,4 +60,5 @@ If your system has `nodejs` but no `node`, you should:
 ln -s $(which nodejs) /usr/bin/node
 ```
 
-This command will link `nodejs` to `node`.
+This command will link `nodejs` to `node`. Only if node.js is available as `node` the node.js collectors of netdata will work.
+
