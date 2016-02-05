@@ -292,7 +292,7 @@ Keep in mind though, that XML parsing is done using javascript code, which requi
 
 In general, expect XML parsing to be 2 to 3 times more CPU intensive than JSON.
 
-**So, if you can use the JSON output of bind, prefer it over XML.**. Keep also in mind is generally more *expensive* than JSON (more CPU for bind too).
+**So, if you can use the JSON output of bind, prefer it over XML**. Keep also in mind that even bind will use more CPU when generating XML instead of JSON.
 
 The XML interface of bind is not autodetected.
 You will have to provide the config file `/etc/netdata/named.conf`, like this:
