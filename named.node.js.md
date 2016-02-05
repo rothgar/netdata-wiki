@@ -2,6 +2,8 @@
 
 Using this netdata collector, you can monitor one or more ISC Bind servers.
 
+The source code for this plugin in [here](https://github.com/firehol/netdata/blob/master/node.d/named.node.js).
+
 ## Example netdata charts
 
 Depending on the number of views your bind has, you may get a large number of charts.
