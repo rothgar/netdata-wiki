@@ -4,6 +4,16 @@ The `apache` collector visualizes key performance data for an apache web server.
 
 The source code is [here](https://github.com/firehol/netdata/blob/master/charts.d/apache.chart.sh).
 
+## Example netdata charts
+
+For apache 2.2:
+
+![image](https://cloud.githubusercontent.com/assets/2662304/12530273/421c4d14-c1e2-11e5-9fb6-ca6d6dd3b1dd.png)
+
+For apache 2.4:
+
+![image](https://cloud.githubusercontent.com/assets/2662304/12530376/29ec26de-c1e6-11e5-9af1-e48aaf781795.png)
+
 ## How it works
 
 It runs `curl "http://apache.host/server-status?auto` to fetch the current status of apache.
@@ -106,13 +116,3 @@ curl "http://127.0.0.1:80/server-status?auto"
 ```
 
 netdata will be able to do it too.
-
-## Example netdata charts
-
-For apache 2.2:
-
-![image](https://cloud.githubusercontent.com/assets/2662304/12530273/421c4d14-c1e2-11e5-9fb6-ca6d6dd3b1dd.png)
-
-For apache 2.4:
-
-![image](https://cloud.githubusercontent.com/assets/2662304/12530376/29ec26de-c1e6-11e5-9af1-e48aaf781795.png)
