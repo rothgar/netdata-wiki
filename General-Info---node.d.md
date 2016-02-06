@@ -71,7 +71,7 @@ var mymodule = {
 		if(typeof(config.servers) === 'undefined' || config.servers.length === 0) {
 
 			/*
-			 * create a service using internal default
+			 * create a service using internal defaults;
 			 * this is used for auto-detecting the settings
 			 * if possible
 			 */
