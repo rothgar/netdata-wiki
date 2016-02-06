@@ -4,7 +4,7 @@ To run `node.js` plugins you need to have `node` installed in your system.
 
 In some older systems, the package named `node` is not node.js. It is a terminal emulation program called `ax25-node`. In this case the node.js package may be referred as `nodejs`. Once you install `nodejs`, you will have to link `/usr/bin/nodejs` to `/usr/bin/node` for this plugin to work, so that typing `node` in your terminal, opens node.js. For more information check the **[[Installation]]** guide.
 
-## testing collectors written for node.d.plugin
+## debugging collectors written for node.d.plugin
 
 `node.d.plugin` is a netdata plugin that provides an abstraction layer to allow easy and quick development of data collectors in node.js. It also manages all its data collectors (in `/usr/libexec/netdata/node.d`) using a single instance of node, thus lowering the memory footprint of data collection. Node.js is perfect for asynchronous operations, and since data collection should not be a CPU intensive task, using node.js for data collection provides an ideal solution.
 
