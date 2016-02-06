@@ -46,7 +46,11 @@ var mymodule = {
 
 		if(typeof(config.servers) === 'undefined' || config.servers.length === 0) {
 
-			/* do auto-detection here */
+			/*
+			 * create a service using internal default
+			 * this is used for auto-detecting the settings
+			 * if possible
+			 */
 
 			netdata.service({
 				name: 'a name for this service',
@@ -59,7 +63,10 @@ var mymodule = {
 		}
 		else {
 
-			/* parse the configuration file */
+			/*
+			 * create a service for each server in the
+			 * configuration file
+			 */
 
 			var len = config.servers.length;
 			while(len--) {
@@ -110,4 +117,3 @@ This file should have the following format:
 If the config file `/etc/netdata/mymodule.conf` does not give a `enable_autodetect` or `update_every`, these will be added by `node.d.plugin`. So you module will always have them.
 
 The configuration file `/etc/netdata/mymodule.conf` may contain whatever else is needed for `mymodule`.
-
