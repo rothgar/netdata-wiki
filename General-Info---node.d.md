@@ -72,9 +72,6 @@ var mymodule = {
 			while(len--) {
 				var server = config.servers[len];
 
-				if(typeof server.update_every === 'undefined')
-					server.update_every = this.update_every;
-
 				netdata.service({
 					name: server.name,
 					update_every: server.update_every,
