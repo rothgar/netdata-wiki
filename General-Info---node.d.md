@@ -56,6 +56,7 @@ var mymodule = {
 				name: 'a name for this service',
 				update_every: this.update_every,
 				module: this,
+				processor: netdata.processors.myprocessor,
 				// any other information your processor needs
 			}).execute(this.processResponse);
 
@@ -76,6 +77,7 @@ var mymodule = {
 					name: server.name,
 					update_every: server.update_every,
 					module: this,
+					processor: netdata.processors.myprocessor,
 					// any other information your processor needs
 				}).execute(this.processResponse);
 
