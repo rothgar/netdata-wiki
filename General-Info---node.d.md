@@ -125,3 +125,14 @@ This file should have the following format:
 If the config file `/etc/netdata/mymodule.conf` does not give a `enable_autodetect` or `update_every`, these will be added by `node.d.plugin`. So you module will always have them.
 
 The configuration file `/etc/netdata/mymodule.conf` may contain whatever else is needed for `mymodule`.
+
+### processResponse(data)
+
+`data` may be `null` or whatever the processor specified in the `service` returned.
+
+The `service` object defines a set of functions to allow you send information to the netdata server about:
+
+1. Charts and dimension definitions
+2. Updated values, from the collected values
+
+ --- INCOMPLETE DOCUMENT --- 
