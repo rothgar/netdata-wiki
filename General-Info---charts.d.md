@@ -129,6 +129,12 @@ You can run `charts.d.plugin` by hand with something like this:
 
 Charts.d will run in `debug` mode, with an update frequency of `1`, evaluating only the collector scripts `X`, `Y` and `Z`. You can define zero or more collector scripts. If none is defined, charts.d will evaluate all collector script available.
 
+Keep in mind that if your configs are not in `/etc/netdata`, you should do the following before running `charts.d.plugin`:
+
+```sh
+export NETDATA_CONFIG_DIR="/path/to/etc/netdata"
+```
+
 ## Running multiple instances of charts.d.plugin
 
 Charts.d will call the `X_update()` function one after another. This means that a delay in collector `X` will also delay the collection of `Y` and `Z`.
