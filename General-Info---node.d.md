@@ -4,9 +4,19 @@ To run `node.js` plugins you need to have `node` installed in your system.
 
 In some older systems, the package named `node` is not node.js. It is a terminal emulation program called `ax25-node`. In this case the node.js package may be referred as `nodejs`. Once you install `nodejs`, you will have to link `/usr/bin/nodejs` to `/usr/bin/node` for this plugin to work, so that typing `node` in your terminal, opens node.js. For more information check the **[[Installation]]** guide.
 
+## testing collectors written for node.d.plugin
+
+`node.d.plugin` is a netdata plugin that provides an abstraction layer to allow easy and quick development of data collectors in node.js. It also manages all its data collectors (in `/usr/libexec/netdata/node.d`) using a single instance of node, thus lowering the memory footprint of data collection. Node.js is perfect for asynchronous operations, and since data collection should not be a CPU intensive task, using node.js for data collection provides an ideal solution.
+
+Of course, there can be plugins written in node.js that are independent (placed in `/usr/libexec/netdata/plugins`). To test them you should refer to their documentation.
+
+So, this is how to test `node.d.plugin` collectors, which are placed in `/usr/libexec/netdata/node.d`:
+
+
+
 ---
 
-# developing node.js plugins
+## developing node.js plugins
 
 These are the entities involved:
 
@@ -21,7 +31,7 @@ These are the entities involved:
 
 3. Your module will automatically be able to process any number of servers, with different settings (even different data collection frequencies). You will write just the work needed for one, `node.d.plugin` will do the rest. For each server you are going to fetch data from, you will have to create a `service` (more later).
 
-## writing a module
+### writing a module
 
 To provide a module called `mymodule`, you have create the file `/usr/libexec/netdata/node.d/mymodule.node.js`, with this structure:
 
@@ -116,7 +126,7 @@ var mymodule = {
 module.exports = mymodule;
 ```
 
-### configure(config)
+#### configure(config)
 
 `configure(config)` is called just once, when `node.d.plugin` starts.
 The config file will contain the contents of `/etc/netdata/mymodule.conf`.
@@ -134,7 +144,7 @@ If the config file `/etc/netdata/mymodule.conf` does not give a `enable_autodete
 
 The configuration file `/etc/netdata/mymodule.conf` may contain whatever else is needed for `mymodule`.
 
-### processResponse(data)
+#### processResponse(data)
 
 `data` may be `null` or whatever the processor specified in the `service` returned.
 
@@ -142,5 +152,7 @@ The `service` object defines a set of functions to allow you send information to
 
 1. Charts and dimension definitions
 2. Updated values, from the collected values
+
+---
 
  --- INCOMPLETE DOCUMENT --- 
