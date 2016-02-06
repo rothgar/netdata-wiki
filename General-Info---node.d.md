@@ -1,5 +1,13 @@
 # node.js plugins
 
+To run `node.js` plugins you need to have `node` installed in your system.
+
+In some older systems, the package named `node` is not node.js. It is a terminal emulation program called `ax25-node`. In this case the node.js package may be referred as `nodejs`. Once you install `nodejs`, you will have to link `/usr/bin/nodejs` to `/usr/bin/node` for this plugin to work, so that typing `node` in your terminal, opens node.js. For more information check the **[[Installation]]** guide.
+
+---
+
+# developing node.js plugins
+
 These are the entities involved:
 
 1. `node.d.plugin`
