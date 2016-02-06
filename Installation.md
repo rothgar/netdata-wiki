@@ -62,3 +62,4 @@ ln -s $(which nodejs) /usr/bin/node
 
 This command will link `nodejs` to `node`. Only if node.js is available as `node` the node.js collectors of netdata will work.
 
+If your system has another program called `node` as `/usr/bin/node`, you will have to pick one. Usually the conflicting package is `ax25-node`, which unless your really need it can be uninstalled.
