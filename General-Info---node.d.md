@@ -1,16 +1,26 @@
 # node.js plugins
 
+Node.js is perfect for asynchronous operations, and since data collection should not be a CPU intensive task, using node.js for data collection provides an ideal solution.
+
+`node.d.plugin` is a netdata plugin that provides an abstraction layer to allow easy and quick development of data collectors in node.js. It also manages all its data collectors (placed in `/usr/libexec/netdata/node.d`) using a single instance of node, thus lowering the memory footprint of data collection.
+
+Of course, there can be independent plugins written in node.js (placed in `/usr/libexec/netdata/plugins`). These will have to be developed using the guidelines of **[[External Plugins]]**.
+
 To run `node.js` plugins you need to have `node` installed in your system.
 
 In some older systems, the package named `node` is not node.js. It is a terminal emulation program called `ax25-node`. In this case the node.js package may be referred as `nodejs`. Once you install `nodejs`, you will have to link `/usr/bin/nodejs` to `/usr/bin/node` for this plugin to work, so that typing `node` in your terminal, opens node.js. For more information check the **[[Installation]]** guide.
 
+## configuring `node.d.plugin`
+
+`node.d.plugin` can work even without any configuration, if it can find an operational collector in `/usr/libexec/netdata/node.d`.
+
+Using its configuration file `/etc/netdata/node.d.conf` you can control its default behaviour
+
+*FIXME: document the options and the file format*
+
 ## debugging collectors written for node.d.plugin
 
-`node.d.plugin` is a netdata plugin that provides an abstraction layer to allow easy and quick development of data collectors in node.js. It also manages all its data collectors (in `/usr/libexec/netdata/node.d`) using a single instance of node, thus lowering the memory footprint of data collection. Node.js is perfect for asynchronous operations, and since data collection should not be a CPU intensive task, using node.js for data collection provides an ideal solution.
-
-Of course, there can be plugins written in node.js that are independent (placed in `/usr/libexec/netdata/plugins`). To test them you should refer to their documentation.
-
-So, this is how to test `node.d.plugin` collectors, which are placed in `/usr/libexec/netdata/node.d`:
+To test `node.d.plugin` collectors, which are placed in `/usr/libexec/netdata/node.d`:
 
 You can run `node.d.plugin` by hand, with something like this:
 
@@ -167,4 +177,4 @@ The `service` object defines a set of functions to allow you send information to
 
 ---
 
- --- INCOMPLETE DOCUMENT --- 
+*FIXME: document an operational node.d.plugin data collector*
