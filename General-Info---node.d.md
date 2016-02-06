@@ -20,6 +20,12 @@ You can run `node.d.plugin` by hand, with something like this:
 
 `node.d.plugin` will run in `debug` mode (lots of debug info), with an update frequency of `1` second, evaluating only the collector scripts `X` (i.e. `/usr/libexec/netdata/node.d/X.node.js`), `Y` and `Z`. You can define zero or more collector scripts. If none is defined, `node.d.plugin` will evaluate all collector script available.
 
+Keep in mind that if your configs are not in `/etc/netdata`, you should do the following before running `node.d.plugin`:
+
+```sh
+export NETDATA_CONFIG_DIR="/path/to/etc/netdata"
+```
+
 ---
 
 ## developing `node.d.plugin` collectors
