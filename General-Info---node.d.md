@@ -177,4 +177,4 @@ The `service` object defines a set of functions to allow you send information to
 
 ---
 
-*FIXME: document an operational node.d.plugin data collector*
+*FIXME: document an operational node.d.plugin data collector - the best example is the [snmp collector](https://github.com/firehol/netdata/blob/master/node.d/snmp.node.js)*
