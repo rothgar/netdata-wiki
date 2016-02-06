@@ -12,7 +12,13 @@ Of course, there can be plugins written in node.js that are independent (placed 
 
 So, this is how to test `node.d.plugin` collectors, which are placed in `/usr/libexec/netdata/node.d`:
 
+You can run node.d.plugin by hand, with something like this:
 
+```sh
+/usr/libexec/netdata/plugins/node.d.plugin debug 1 X Y Z
+```
+
+`node.d.plugin` will run in `debug` mode (lots of debug info), with an update frequency of `1` second, evaluating only the collector scripts `X` (i.e. `/usr/libexec/netdata/node.d/X.node.js`), `Y` and `Z`. You can define zero or more collector scripts. If none is defined, `node.d.plugin` will evaluate all collector script available.
 
 ---
 
