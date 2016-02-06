@@ -37,7 +37,7 @@ netdata.processors.myprocessor = {
 var mymodule = {
 	processResponse: function(service, data) {
 
-		/* generate charts and update values here */
+		/* send information to the netdata server here */
 
 	},
 
