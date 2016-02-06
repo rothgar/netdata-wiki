@@ -12,7 +12,7 @@ Of course, there can be plugins written in node.js that are independent (placed 
 
 So, this is how to test `node.d.plugin` collectors, which are placed in `/usr/libexec/netdata/node.d`:
 
-You can run node.d.plugin by hand, with something like this:
+You can run `node.d.plugin` by hand, with something like this:
 
 ```sh
 /usr/libexec/netdata/plugins/node.d.plugin debug 1 X Y Z
@@ -22,7 +22,7 @@ You can run node.d.plugin by hand, with something like this:
 
 ---
 
-## developing node.js plugins
+## developing `node.d.plugin` collectors
 
 These are the entities involved:
 
