@@ -90,6 +90,15 @@ var mymodule = {
 	},
 
 	update: function(service, callback) {
+		
+		/*
+		 * this function is called when each service
+		 * created by the configure function, needs to
+		 * collect updated values.
+		 *
+		 * You normally will not need to change it.
+		 */
+
 		service.execute(function(service, data) {
 			mymodule.processResponse(service, data);
 			callback();
