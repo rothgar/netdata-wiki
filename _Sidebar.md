@@ -59,7 +59,9 @@
     - [[Gauge.js]]
     - [[jQuery Sparkline]]
     - [[Peity]]
+
 * [[Custom Dashboards]]
+
   Learn how to create dashboards with charts from one or more netdata servers!
 
 ---
