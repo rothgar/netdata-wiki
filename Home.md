@@ -82,11 +82,22 @@ If you want to discuss your plans, open a github issue to start the discussion.
 
 Well, we plan to do these:
 
-1. Rename all the charts to follow the naming conventions of OpenTSDB (which will probably require a few changes to the plugins API and the default web dashboard).
-2. Allow custom dashboards to be defined using JSON files, to avoid writing HTML
-3. Allow per chart documentation to be stored in server side JSON files (outside the dashboards and the netdata daemon)
-4. Allow creating dashboards from other dashboards (so that complex dashboards can be created)
-5. Improve the memory database (possibly using the internal dedupper, LZ4 compression, disk archiving, mirroring it to third party databases, etc).
-6. Create more plugins. A lot more plugins.
-7. Allow internal plugins to be forked to external processes (this will protect the netdata daemon from plugin crashes, allow different security schemas for each plugin, etc).
-8. Document everything (especially the dashboard and plugin support)
+1. Allow the default dashboard to connect to multiple netdata servers:
+
+ - add `connect` to connect to more netdata servers
+ - add `search` to find charts and dimensions on all connected servers
+ - add `compare` to create a dynamic dashboard using charts from all connected servers
+
+2. Allow custom dashboards to be defined using JSON files, to avoid writing HTML. These JSON dashboards should also include any user documentation needed.
+
+   We are already pretty close for this. The default dashboard is abstracted enough to support it. It still needs some work though.
+
+3. Allow creating dashboards from other dashboards (so that complex dashboards can be created).
+
+4. Improve the memory database (possibly using the internal deduper, compression, disk archiving, mirroring it to third party databases, etc).
+
+5. Create more plugins. A lot more plugins.
+
+6. Allow internal plugins to be forked to external processes (this will protect the netdata daemon from plugin crashes, allow different security schemas for each plugin, etc).
+
+7. Document everything (this is a work in progress already).
