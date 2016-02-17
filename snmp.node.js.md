@@ -26,11 +26,13 @@ In this example:
 {
 	"enable_autodetect": false,
 	"update_every": 5,
+	"max_request_size": 100,
 	"servers": [
 		{
 			"hostname": "10.11.12.8",
 			"community": "public",
 			"update_every": 10,
+			"max_request_size": 50,
 			"options": { "timeout": 10000 },
 			"charts": {
 				"snmp_switch.bandwidth_port1": {
@@ -109,13 +111,13 @@ Each of the 24 new charts will have its id (1-24) appended at:
 					"multiply_range": [ 1, 24 ],
 					"dimensions": {
 						"in": {
-							"oid": "1.3.6.1.2.1.2.2.1.10",
+							"oid": "1.3.6.1.2.1.2.2.1.10.",
 							"algorithm": "incremental",
 							"multiplier": 8,
 							"divisor": 1024
 						},
 						"out": {
-							"oid": "1.3.6.1.2.1.2.2.1.16",
+							"oid": "1.3.6.1.2.1.2.2.1.16.",
 							"algorithm": "incremental",
 							"multiplier": -8,
 							"divisor": 1024
@@ -135,6 +137,14 @@ The `options` given for each server, are:
  - `transport`, the default is `udp4`.
  - `port`, the port of the SNMP device to connect to. The default is `161`.
  - `retries`, the number of attempts to make to fetch the data. The default is `1`.
+
+## Retreiving names from snmp
+
+You can append a value retrieved from SNMP to the title, by adding `titleoid` to the chart.
+
+You can set a dimension name to a value retrieved from SNMP, by adding `oidname` to the dimension.
+
+Both of the above will participate in `multiply_range`.
 
 
 ## Testing the configuration
