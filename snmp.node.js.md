@@ -81,6 +81,10 @@ In this example:
 }
 ```
 
+`update_every` is the update frequency for each server, in seconds.
+
+`max_request_size` limits the maximum number of OIDs that will be requested in a single call. The default is 50. Lower this number of you get `TooBig` errors in netdata error.log.
+
 If you need to define many charts using incremental OIDs, you can use something like this:
 
 This is like the previous, but the option `multiply_range` given, will multiply the current chart from `1` to `24` inclusive, producing 24 charts in total for the 24 ports of the switch `10.11.12.8`.
