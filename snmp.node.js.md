@@ -200,6 +200,8 @@ This is what I use for my Linksys SRW2024P. It creates:
 3. One chart for packets output
 4. 24 charts (one for each port) of the switch. It also appends the port names as defined at the switch to the chart titles.
 
+This switch has a very slow SNMP processors. To respond, it needs about 8 seconds, so I have set the refresh frequency (`update_every`) to 15 seconds.
+
 ```js
 {
         "enable_autodetect": false,
