@@ -191,14 +191,16 @@ snmpwalk -t 20 -v 1 -O fn -c public 10.11.12.8
 
 Keep in mind that `snmpwalk` outputs the OIDs with a dot in front them. You should remove this dot when adding OIDs to the configuration file of this collector.
 
-## Linksys SRW2024P
+## Example: Linksys SRW2024P
 
 This is what I use for my Linksys SRW2024P. It creates:
 
 1. A chart for power consumption (it is a PoE switch)
-2. Two charts for packets received (packets received and packets with errors)
+2. Two charts for packets received (total packets received and packets received with errors)
 3. One chart for packets output
-4. 24 charts (one for each port) of the switch. It also appends the port names as defined at the switch to the chart titles.
+4. 24 charts, one for each port of the switch. It also appends the port names, as defined at the switch, to the chart titles.
+
+This switch also reports various other metrics, like snmp, packets per port, etc. Unfortunately it does not report CPU utilization or backplane utilization.
 
 This switch has a very slow SNMP processors. To respond, it needs about 8 seconds, so I have set the refresh frequency (`update_every`) to 15 seconds.
 
