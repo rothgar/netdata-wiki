@@ -8,6 +8,7 @@ This collector supports:
 - each SNMP device can be used to collect data for any number of charts
 - each chart may have any number of dimensions
 - each SNMP device may have a different update frequency
+- each SNMP device will accept one or more batches to report values (you can set `max_request_size` per SNMP server, to control the size of batches).
 
 The source code of the plugin is [here](https://github.com/firehol/netdata/blob/master/node.d/snmp.node.js).
 
@@ -40,6 +41,7 @@ In this example:
 					"units": "kilobits/s",
 					"type": "area",
 					"priority": 1,
+					"family": "ports",
 					"dimensions": {
 						"in": {
 							"oid": "1.3.6.1.2.1.2.2.1.10.1",
@@ -60,6 +62,7 @@ In this example:
 					"units": "kilobits/s",
 					"type": "area",
 					"priority": 1,
+					"family": "ports",
 					"dimensions": {
 						"in": {
 							"oid": "1.3.6.1.2.1.2.2.1.10.2",
@@ -84,6 +87,8 @@ In this example:
 `update_every` is the update frequency for each server, in seconds.
 
 `max_request_size` limits the maximum number of OIDs that will be requested in a single call. The default is 50. Lower this number of you get `TooBig` errors in netdata error.log.
+
+`family` sets the name of the submenu of the dashboard each chart will appear under.
 
 If you need to define many charts using incremental OIDs, you can use something like this:
 
@@ -112,6 +117,7 @@ Each of the 24 new charts will have its id (1-24) appended at:
 					"units": "kilobits/s",
 					"type": "area",
 					"priority": 1,
+					"family": "ports",
 					"multiply_range": [ 1, 24 ],
 					"dimensions": {
 						"in": {
