@@ -193,7 +193,12 @@ Keep in mind that `snmpwalk` outputs the OIDs with a dot in front them. You shou
 
 ## Linksys SRW2024P
 
-This is what I use for my Linksys SRW2024P:
+This is what I use for my Linksys SRW2024P. It creates:
+
+1. A chart for power consumption (it is a PoE switch)
+2. Two charts for packets received (packets received and packets with errors)
+3. One chart for packets output
+4. 24 charts (one for each port) of the switch. It also appends the port names as defined at the switch to the chart titles.
 
 ```js
 {
