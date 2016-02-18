@@ -49,17 +49,13 @@ To start it at boot, just run `/usr/sbin/netdata` from your `/etc/rc.local` or e
 
 ## node.js
 
-I think the future of data collectors is node.js
-So, please install `node`.
+I believe the future of data collectors is node.js
+So, please install `nodejs` or `node`.
 
-In old systems node.js is the package `nodejs`. In newer systems it is `node`.
+netdata `node.d.plugin` will search for the node.js executable in the system path, using the following names, in this order:
 
-If your system has `nodejs` but no `node`, you should:
+1. nodejs
+2. node
+3. js
 
-```sh
-ln -s $(which nodejs) /usr/bin/node
-```
-
-This command will link `nodejs` to `node`. Only if node.js is available as `node` the node.js collectors of netdata will work.
-
-If your system has another program called `node` as `/usr/bin/node`, you will have to pick one. Usually the conflicting package is `ax25-node`, which unless your really need it can be uninstalled.
+Keep in mind that you need **node.js**. There are also other versions of server side javascript, like spidermonkey. Only **node.js** will work with netdata.
