@@ -54,8 +54,8 @@ So, please install `nodejs` or `node`.
 
 netdata `node.d.plugin` will search for the node.js executable in the system path, using the following names, in this order:
 
-1. nodejs
-2. node
-3. js
+1. nodejs (by running `command -v nodejs`)
+2. node (by running `command -v node`)
+3. js (by running `command -v js`)
 
 Keep in mind that you need **node.js**. There are also other versions of server side javascript, like spidermonkey. Only **node.js** will work with netdata.
