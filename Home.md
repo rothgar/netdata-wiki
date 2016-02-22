@@ -1,4 +1,4 @@
-# Welcome to the netdata!
+# Welcome to netdata!
 
 A live demo of netdata is available at **[netdata.firehol.org](http://netdata.firehol.org)**.
 
