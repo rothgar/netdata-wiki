@@ -1,25 +1,25 @@
-Documentation is not written yet.
+Documentation is not written yet. This is just a quick and dirty guide.
 
 The shell script code is [here](https://github.com/firehol/netdata/blob/master/charts.d/mysql.chart.sh)
 
-This collector support any number of mysql servers.
-It collects many of its statistics and generates 20+ charts.
+This collector supports any number of mysql servers.
+It generates 20+ charts for each mysql server.
 
-By default (un-configured) it will attempt to connect to a mysql server at localhost. If it succeeds it will proceed.
+By default (not configured) it will attempt to connect to a mysql server at localhost. If it succeeds it will proceed.
 
-You can configure the mysql servers by editing `/etc/netdata/mysql.conf`.
+You can configure the mysql servers to connect to, by editing `/etc/netdata/mysql.conf`.
 
 To setup 2 servers (MY_A and MY_B) this is what you will need:
 
 ```sh
 
-# you can define a different mysql client per server
-# if you want to use the mysql from the system path,
+# you can define a different mysql client per server.
+# if you want to use the mysql command from the system path,
 # you can omit setting it.
 mysql_cmds[MY_A]="/path/to/mysql"
 mysql_cmds[MY_B]="/path/to/mysql"
 
-# command line options to connect to the server
+# mysql client command line options to connect to the server
 mysql_opts[MY_A]="-h serverA -u user"
 mysql_opts[MY_B]="--defaults-file /etc/mysql/serverB.cnf"
 
