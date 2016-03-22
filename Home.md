@@ -71,7 +71,7 @@ Netdata is stable. We use it on production systems without any issues.
 
 ## Is it released?
 
-No it is not. It could be though.
+Yeap!. Check the [releases page](https://github.com/firehol/netdata/releases).
 
 ## Can I code too?
 
