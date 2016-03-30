@@ -41,7 +41,7 @@ Do this to install and run netdata:
 
 ```sh
 
-# download it
+# download it - the directory 'netdata.git' will be created
 git clone https://github.com/firehol/netdata.git netdata.git --depth=1
 cd netdata.git
 
@@ -59,6 +59,21 @@ Once the installer completes, the file `/etc/netdata/netdata.conf` will be creat
 You can edit this file to set options. One common option to tweak is `history`, which controls the size of the memory database netdata will use. By default is `3600` seconds (an hour of data at the charts) which makes netdata use about 10-15MB of RAM (depending on the number of charts detected on your system). Check **[[Memory Requirements]]**.
 
 To apply the changes you made, you have to restart netdata.
+
+## Updating netdata
+
+You can update netdata to the latest version by getting into `netdata.git` you download it and running:
+
+```sh
+# update it
+cd /path/to/netdata.git
+git pull
+
+# rebuild it and install it
+./netdata-installer.sh
+```
+
+Then run the installer again, like above.
 
 ---
 
