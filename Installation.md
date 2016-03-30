@@ -1,6 +1,6 @@
 # Installation
 
-## Automatic installation## 
+## Automatic installation
 
 Before you start, make sure you have `zlib` development files installed.
 
