@@ -5,12 +5,18 @@
 Before you start, make sure you have `zlib` development files installed.
 
 You also need to have a basic build environment in place. You will need packages like
-`git`, `make`, `gcc`, `autoconf`, `autogen`, `automake`, `pgk-config`, etc.
+`git`, `make`, `gcc`, `autoconf`, `autogen`, `automake`, `pkg-config`, etc.
 
 To install them in debian/ubuntu, you need to run:
 
 ```sh
 apt-get install zlib1g-dev gcc make git autoconf autogen automake pkg-config
+```
+
+To install them in centos/redhat, you need to run:
+
+```sh
+yum install zlib-devel gcc make git autoconf autogen automake pkgconfig
 ```
 
 Then do this to install and run netdata:
