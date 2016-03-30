@@ -1,7 +1,5 @@
 # Installation
 
-## Prepare your system
-
 Before you start, make sure you have `zlib` development files installed.
 
 You also need to have a basic build environment in place. You will need packages like
