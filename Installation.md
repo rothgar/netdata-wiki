@@ -1,6 +1,6 @@
 # Installation
 
-## Automatic installation
+## Automatic installation## 
 
 Before you start, make sure you have `zlib` development files installed.
 
@@ -17,6 +17,20 @@ To install them in centos/redhat, you need to run:
 
 ```sh
 yum install zlib-devel gcc make git autoconf autogen automake pkgconfig
+```
+
+To install them in Arch Linux, you need to run:
+
+```sh
+pacman -S --needed base-devel libmnl libnetfilter_acct zlib
+```
+
+or run the following (and ignore the rest of this article):
+
+```sh
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/netdata.tar.gz
+tar xf netdata.tar.gz && cd netdata/
+makepkg -sri
 ```
 
 Then do this to install and run netdata:
