@@ -8,14 +8,12 @@ You also need to have a basic build environment in place. You will need packages
 This is how to install them on different distributions:
 
 #### Debian / Ubuntu
-You need to run:
 
 ```sh
 apt-get install zlib1g-dev gcc make git autoconf autogen automake pkg-config
 ```
 
 #### Centos / Redhat
-You need to run:
 
 ```sh
 yum install zlib-devel gcc make git autoconf autogen automake pkgconfig
@@ -23,13 +21,11 @@ yum install zlib-devel gcc make git autoconf autogen automake pkgconfig
 
 #### ArchLinux
 
-You need to run:
-
 ```sh
 pacman -S --needed base-devel libmnl libnetfilter_acct zlib
 ```
 
-or run the following (and ignore the rest of this article):
+or run the following (and ignore the next section):
 
 ```sh
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/netdata.tar.gz
