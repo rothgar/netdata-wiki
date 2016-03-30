@@ -69,7 +69,8 @@ To start it at boot, just run `/usr/sbin/netdata` from your `/etc/rc.local` or e
 
 ## node.js
 
-I believe the future of data collectors is node.js
+I believe the future of data collectors is node.js (those of you that may complain, don't think system monitoring. Think API or remote service, monitoring).
+
 So, please install `nodejs` or `node`.
 
 netdata `node.d.plugin` will search for the node.js executable in the system path, using the following names, in this order:
