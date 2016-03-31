@@ -73,7 +73,7 @@ git pull
 ./netdata-installer.sh
 ```
 
-Then run the installer again, like above.
+The installer will also restart netdata with the new version.
 
 ---
 
