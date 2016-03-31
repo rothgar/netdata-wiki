@@ -62,7 +62,7 @@ To apply the changes you made, you have to restart netdata.
 
 ## Updating netdata
 
-You can update netdata to the latest version by getting into `netdata.git` you download it and running:
+You can update netdata to the latest version by getting into `netdata.git` you downloaded before and running:
 
 ```sh
 # update it
