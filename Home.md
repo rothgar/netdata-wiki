@@ -67,12 +67,37 @@ Netdata is stable. We use it on production systems without any issues.
 
 ## Is it released?
 
-Yeap!. Check the [releases page](https://github.com/firehol/netdata/releases).
+Yeap! Check the [releases page](https://github.com/firehol/netdata/releases).
 
 ## Can I code too?
 
 Of course! Fork the repo, adapt as you see fit and create pull requests.
 If you want to discuss your plans, open a github issue to start the discussion.
+
+## Why you wrote data collection?
+
+Well, there are plenty of data collectors already. But we have one or more of the following problems with them:
+
+- They are not able for per second data collection
+- They can do per second data collection, but they are not optimized enough for always running on all systems
+- They need to be configured, when we need auto-detection
+
+Of course, we could use them just to get data at a slower rate, and this can be done, but it was not our priority. netdata proves that **real-time data collection and visualization can be done efficiently**.
+
+## Is it practical to have so short historical data?
+
+For a few purposes yes, for others no.
+
+Our focus is **real-time data collection and visualization**. Our (let's say) "competitors" are the console tools, neither grafana nor collectd, statsd, nagios, zabbix, etc. All these are perfect tools for what they do (and they do a lot). But we think they provide "statistics about past performance" (of course with alarms, health monitoring, etc). netdata provides "real-time performance monitoring", much like the console tools do. Different things.
+
+Of course, historical data is our next priority.
+
+## Why there is no "central" netdata?
+
+We strongly believe monitoring should be scaled out, not up. A "central" monitoring server is just another problem and should be avoided. Of course it is needed for health monitoring, but for real-time performance monitoring it will just add delays and eventually destroy the whole idea.
+
+We all have a wonderful tool on our desktops, that connects us to the entire world: the **web browser**! This is the "central" netdata that connects all the netdata installations. We have done a lot of work towards this and we believe we are very close to show you what we mean. Patience...
+
 
 ## Is there a roadmap?
 
