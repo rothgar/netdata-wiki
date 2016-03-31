@@ -88,7 +88,7 @@ To build the latest version clone the repository and run docker build with the p
 docker build -t netdata .
 
 # run the container
-docker run -d -v /proc:/host/proc:ro -v /sys:/host/sys:ro -h $(hostname) -p 19999:19999 netdata
+docker run -d -v /proc:/host/proc:ro -v /sys:/host/sys:ro --cap-add SYS_PTRACE -h $(hostname) -p 19999:19999 netdata
 ```
 
 Access netdata from http://localhost:19999 as usual.
