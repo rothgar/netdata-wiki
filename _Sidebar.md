@@ -1,7 +1,7 @@
 **General**
 * [[Home]]
 * [[Why netdata?]]
-* [[Installation]]
+* **[[Installation]]**
 * [[Command Line Options]]
 * [[Configuration]]
 * [[Log Files]]
