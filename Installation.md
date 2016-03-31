@@ -77,6 +77,24 @@ The installer will also restart netdata with the new version.
 
 ---
 
+## Run netdata in a Docker container
+
+You can build and run netdata the latest netdata in a docker container.
+
+To build the latest version clone the repository and run docker build with the provided Dockerfile.
+
+```sh
+# build docker container
+docker build -t netdata .
+
+# run the container
+docker run -d -v /proc:/host/proc:ro -v /sys:/host/sys:ro -h $(hostname) -p 19999:19999 netdata
+```
+
+Access netdata from http://localhost:19999 as usual.
+
+---
+
 ## Starting netdata at boot
 
 To start it at boot, just run `/usr/sbin/netdata` from your `/etc/rc.local` or equivalent.
