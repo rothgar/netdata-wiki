@@ -42,7 +42,7 @@ Do this to install and run netdata:
 ```sh
 
 # download it - the directory 'netdata.git' will be created
-git clone https://github.com/firehol/netdata.git netdata --depth=1
+git clone https://github.com/firehol/netdata.git --depth=1
 cd netdata
 
 # build it
