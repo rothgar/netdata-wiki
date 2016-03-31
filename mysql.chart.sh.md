@@ -21,7 +21,7 @@ mysql_cmds[MY_B]="/path/to/mysql"
 
 # mysql client command line options to connect to the server
 mysql_opts[MY_A]="-h serverA -u user"
-mysql_opts[MY_B]="--defaults-file /etc/mysql/serverB.cnf"
+mysql_opts[MY_B]="--defaults-file=/etc/mysql/serverB.cnf"
 
 ```
 
